@@ -69,7 +69,13 @@
 
 // console.log([...["mandy","chen"].entries()]);
 
-for(let [key] of ["mandy","chen"].entries()){
-    console.log(key);
+// for(let key of ["mandy","chen"].entries()){
+//     console.log(key);
+// }
+// console.log([...["mandy","chen"].keys()]);
+
+for(let value of ["mandy","chen"].values()){
+    console.log(value);
 }
-console.log([...["mandy","chen"].keys()]);
+
+console.log([...["mandy","chen"].values()]);
