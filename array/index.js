@@ -52,9 +52,19 @@
 // let array=Array.of(1,2,3,4,5,6,7);
 // console.log(array.fill(0,1,4));
 
-let array =Array.of(1,2,3,4);
-console.log(array.copyWithin(0,2,4));
-let array1 =Array.of(1,2,3,4,5);
-console.log(array1.copyWithin(0,2));
-let array2=Array.of(1,2,3,4,5,6);
-console.log(array2.copyWithin(-3,0));
+// let array =Array.of(1,2,3,4);
+// console.log(array.copyWithin(0,2,4));
+// let array1 =Array.of(1,2,3,4,5);
+// console.log(array1.copyWithin(0,2));
+// let array2=Array.of(1,2,3,4,5,6);
+// console.log(array2.copyWithin(-3,0));
+
+for(let [key,value] of ["mandy","chen"].entries()){
+    console.log(key,value);
+}
+
+let entries=["mandy","chen"].entries();
+console.log(entries.next().value);
+console.log(entries.next().value);
+
+console.log([...["mandy","chen"].entries()]);
