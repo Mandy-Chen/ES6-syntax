@@ -43,5 +43,8 @@
 // console.log(Array.from(set));
 // console.log(Array.from({length:4},(length,i)=>i));
 
-let array=Array.of(1,2,3,4,5,6);
-console.log(array.find(item=>(item>4)));
+// let array=Array.of(1,2,3,4,5,6);
+// console.log(array.find(item=>(item>4)));
+
+let array=Array.of(1,3,2,4);
+console.log(array.findIndex(item=>item==3));
