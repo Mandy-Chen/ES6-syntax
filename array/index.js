@@ -59,12 +59,17 @@
 // let array2=Array.of(1,2,3,4,5,6);
 // console.log(array2.copyWithin(-3,0));
 
-for(let [key,value] of ["mandy","chen"].entries()){
-    console.log(key,value);
+// for(let [key,value] of ["mandy","chen"].entries()){
+//     console.log(key,value);
+// }
+
+// let entries=["mandy","chen"].entries();
+// console.log(entries.next().value);
+// console.log(entries.next().value);
+
+// console.log([...["mandy","chen"].entries()]);
+
+for(let [key] of ["mandy","chen"].entries()){
+    console.log(key);
 }
-
-let entries=["mandy","chen"].entries();
-console.log(entries.next().value);
-console.log(entries.next().value);
-
-console.log([...["mandy","chen"].entries()]);
+console.log([...["mandy","chen"].keys()]);
