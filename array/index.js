@@ -74,8 +74,13 @@
 // }
 // console.log([...["mandy","chen"].keys()]);
 
-for(let value of ["mandy","chen"].values()){
-    console.log(value);
-}
+// for(let value of ["mandy","chen"].values()){
+//     console.log(value);
+// }
 
-console.log([...["mandy","chen"].values()]);
+// console.log([...["mandy","chen"].values()]);
+
+let array=[1,2,3,4,NaN];
+console.log(array.includes(4));
+console.log(array.includes(2,2));
+console.log(array.includes(NaN));
