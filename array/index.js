@@ -92,6 +92,16 @@
 
 // console.log([1,2,,3].flatMap(i=>i*i));
 
-let array=["mandy","chen"]
-console.log([...array]);
-console.log([...[1,2],...[3,4]]);
+// let array=["mandy","chen"]
+// console.log([...array]);
+// console.log([...[1,2],...[3,4]]);
+
+// let set=new Set(["mandy","chen"])
+// console.log(set.has("mandy"));
+// let map=new Map();
+// map.set("mandy","chen")
+// console.log(map.has("mandy"));
+
+let array=Array.of("mandy","chen",18);
+console.log(array.filter(item=>item.length>3));
+console.log(array);
