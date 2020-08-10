@@ -90,4 +90,8 @@
 // console.log([1,[2,3,[4,[5,6]]]].flat(Infinity));
 // console.log([1,,[2,,3]].flat());
 
-console.log([1,2,,3].flatMap(i=>i*i));
+// console.log([1,2,,3].flatMap(i=>i*i));
+
+let array=["mandy","chen"]
+console.log([...array]);
+console.log([...[1,2],...[3,4]]);
