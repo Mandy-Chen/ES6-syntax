@@ -80,7 +80,12 @@
 
 // console.log([...["mandy","chen"].values()]);
 
-let array=[1,2,3,4,NaN];
-console.log(array.includes(4));
-console.log(array.includes(2,2));
-console.log(array.includes(NaN));
+// let array=[1,2,3,4,NaN];
+// console.log(array.includes(4));
+// console.log(array.includes(2,2));
+// console.log(array.includes(NaN));
+
+console.log([1,[2,3],[4,5]].flat());
+console.log([1,[2,[3,4]]].flat(1));
+console.log([1,[2,3,[4,[5,6]]]].flat(Infinity));
+console.log([1,,[2,,3]].flat());
