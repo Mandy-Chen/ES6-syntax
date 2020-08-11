@@ -102,6 +102,10 @@
 // map.set("mandy","chen")
 // console.log(map.has("mandy"));
 
-let array=Array.of("mandy","chen",18);
-console.log(array.filter(item=>item.length>3));
-console.log(array);
+// let array=Array.of("mandy","chen",18);
+// console.log(array.filter(item=>item.length>3));
+// console.log(array) ;
+
+console.log(Array.isArray([1,2,3]));
+console.log(Array.isArray({"mandy":"chen"}));
+console.log(Array.isArray(12));
