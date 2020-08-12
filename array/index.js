@@ -106,6 +106,18 @@
 // console.log(array.filter(item=>item.length>3));
 // console.log(array) ;
 
-console.log(Array.isArray([1,2,3]));
-console.log(Array.isArray({"mandy":"chen"}));
-console.log(Array.isArray(12));
+// console.log(Array.isArray([1,2,3]));
+// console.log(Array.isArray({"mandy":"chen"}));
+// console.log(Array.isArray(12));
+
+// let array=["mandy","chen",18,9999999];
+// array.forEach(item =>console.log(item));
+// array.forEach((item,index)=>console.log(index+" "+item))
+
+let sum = 0;
+let array = [1, 2, 3, 4];
+getSum = (item) => {
+    sum += item;
+}
+array.forEach(getSum);
+console.log(sum);
