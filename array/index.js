@@ -114,10 +114,17 @@
 // array.forEach(item =>console.log(item));
 // array.forEach((item,index)=>console.log(index+" "+item))
 
-let sum = 0;
-let array = [1, 2, 3, 4];
-getSum = (item) => {
-    sum += item;
+// let sum = 0;
+// let array = [1, 2, 3, 4];
+// getSum = (item) => {
+//     sum += item;
+// }
+// array.forEach(getSum);
+// console.log(sum);
+
+let array = [1, 2, 3, 4]
+getSum = (total, item) => {
+    return total + item;
 }
-array.forEach(getSum);
-console.log(sum);
+console.log(array.reduce(getSum));
+console.log(array.reduce(getSum,10));
