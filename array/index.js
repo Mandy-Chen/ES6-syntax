@@ -135,9 +135,16 @@
 // console.log(array1);
 // console.log(array2);                    
 
-let array=[1,2,3,4,5,10];
-console.log(array.every(item=>item>0));
-console.log(array.every(item=>item>3));
+// let array=[1,2,3,4,5,10];
+// console.log(array.every(item=>item>0));
+// console.log(array.every(item=>item>3));
 
-let array2=[];
-console.log(array2.every(item=>item>0));
+// let array2=[];
+// console.log(array2.every(item=>item>0));
+
+let array = [1, 4, 3, 5, 4];
+console.log(array.indexOf(4)); //1
+console.log(array.indexOf(4,2)); //4
+console.log(array.indexOf(4,-4)); //1
+console.log(array.indexOf(4,-3)); //4
+
