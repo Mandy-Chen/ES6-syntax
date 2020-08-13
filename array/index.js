@@ -163,6 +163,10 @@
 // console.log(array.map(item=>item*2));  //[2,4,6]
 // console.log(array); //[1,2,3]
 
-let array=["mandy","chen","age"];
-console.log(array.pop());  //age
-console.log(array); //["mandy", "chen"]
+// let array=["mandy","chen","age"];
+// console.log(array.pop());  //age
+// console.log(array); //["mandy", "chen"]
+
+let array=["mandy","chen"];
+console.log(array.push("age"));  //3
+console.log(array);  //["mandy", "chen", "age"]
