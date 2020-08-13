@@ -129,8 +129,15 @@
 // console.log(array.reduce(getSum));
 // console.log(array.reduce(getSum,10));
 
-let array1=["I","am"];
-let array2=["mandy","chen"];
-console.log(array1.concat(array2));
-console.log(array1);
-console.log(array2);
+// let array1=["I","am"];
+// let array2=["mandy","chen"];
+// console.log(array1.concat(array2));
+// console.log(array1);
+// console.log(array2);                    
+
+let array=[1,2,3,4,5,10];
+console.log(array.every(item=>item>0));
+console.log(array.every(item=>item>3));
+
+let array2=[];
+console.log(array2.every(item=>item>0));
