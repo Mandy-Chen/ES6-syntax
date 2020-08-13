@@ -148,8 +148,13 @@
 // console.log(array.indexOf(4,-4)); //1
 // console.log(array.indexOf(4,-3)); //4
 
-let array=["mandy","chen","age"]
-console.log(array.join()); //mandy,chen,age
-console.log(array.join("")); //mandychenage
-console.log(array.join("-"));  //mandy-chen-age
-console.log(array.join("+"));  //mandy+chen+age
+// let array=["mandy","chen","age"]
+// console.log(array.join()); //mandy,chen,age
+// console.log(array.join("")); //mandychenage
+// console.log(array.join("-"));  //mandy-chen-age
+// console.log(array.join("+"));  //mandy+chen+age
+
+let array = [1, 3, 2, 3, 2, 1];
+console.log(array.lastIndexOf(2));  //4
+console.log(array.lastIndexOf(3, 9));  //3
+console.log(array.lastIndexOf(3, 1));  //1
