@@ -159,6 +159,10 @@
 // console.log(array.lastIndexOf(3, 9));  //3
 // console.log(array.lastIndexOf(3, 1));  //1
 
-let array=[1,2,3];
-console.log(array.map(item=>item*2));  //[2,4,6]
-console.log(array); //[1,2,3]
+// let array=[1,2,3];
+// console.log(array.map(item=>item*2));  //[2,4,6]
+// console.log(array); //[1,2,3]
+
+let array=["mandy","chen","age"];
+console.log(array.pop());  //age
+console.log(array); //["mandy", "chen"]
