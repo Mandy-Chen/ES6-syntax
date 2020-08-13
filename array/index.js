@@ -122,9 +122,15 @@
 // array.forEach(getSum);
 // console.log(sum);
 
-let array = [1, 2, 3, 4]
-getSum = (total, item) => {
-    return total + item;
-}
-console.log(array.reduce(getSum));
-console.log(array.reduce(getSum,10));
+// let array = [1, 2, 3, 4]
+// getSum = (total, item) => {
+//     return total + item;
+// }
+// console.log(array.reduce(getSum));
+// console.log(array.reduce(getSum,10));
+
+let array1=["I","am"];
+let array2=["mandy","chen"];
+console.log(array1.concat(array2));
+console.log(array1);
+console.log(array2);
