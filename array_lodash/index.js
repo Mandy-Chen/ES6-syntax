@@ -17,6 +17,10 @@ var _ = require('lodash');
 // console.log(_.difference(array, [1, 2, 3, 4])); //[]
 // console.log(array); //[ 1, 2, 3 ]
 
-let array = [2.1, 3.3, 4.5, 7.3];
-console.log(_.differenceBy(array, [4.3, 5, 3, 7.9], Math.floor)); //[ 2.1 ]
-console.log(array); //[ 2.1, 3.3, 4.5, 7.3 ]
+// let array = [2.1, 3.3, 4.5, 7.3];
+// console.log(_.differenceBy(array, [4.3, 5, 3, 7.9], Math.floor)); //[ 2.1 ]
+// console.log(array); //[ 2.1, 3.3, 4.5, 7.3 ]
+
+let array = [[1, 2], [3, 4], [5, 6]];
+console.log(_.differenceWith(array, [[3, 4]], _.isEqual)); //[ [ 1, 2 ], [ 5, 6 ] ]
+console.log(array); //[ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ] ]
