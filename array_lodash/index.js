@@ -33,12 +33,16 @@ var _ = require('lodash');
 // console.log(_.drop(array, 9)); //[]
 // console.log(array); //[ 1, 2, 3, 4, 5 ]
 
-let array = [1, 2, 3, 4, 5];
-console.log(_.dropRight(array)); //[ 1, 2, 3, 4 ]
-console.log(array); //[ 1, 2, 3, 4, 5 ]
-console.log(_.dropRight(array, 0)); //[ 1, 2, 3, 4, 5 ]
-console.log(array); //[ 1, 2, 3, 4, 5 ]
-console.log(_.dropRight(array, 3)); //[ 1, 2 ]
-console.log(array); //[ 1, 2, 3, 4, 5 ]
-console.log(_.dropRight(array, 9)); //[]
-console.log(array); //[ 1, 2, 3, 4, 5 ]
+// let array = [1, 2, 3, 4, 5];
+// console.log(_.dropRight(array)); //[ 1, 2, 3, 4 ]
+// console.log(array); //[ 1, 2, 3, 4, 5 ]
+// console.log(_.dropRight(array, 0)); //[ 1, 2, 3, 4, 5 ]
+// console.log(array); //[ 1, 2, 3, 4, 5 ]
+// console.log(_.dropRight(array, 3)); //[ 1, 2 ]
+// console.log(array); //[ 1, 2, 3, 4, 5 ]
+// console.log(_.dropRight(array, 9)); //[]
+// console.log(array); //[ 1, 2, 3, 4, 5 ]
+
+let array = [1, 2, 3, 4, 5, 6];
+console.log(_.dropRightWhile(array,item=>item>3)); //[ 1, 2, 3 ]
+console.log(array); //[ 1, 2, 3, 4, 5, 6 ]
