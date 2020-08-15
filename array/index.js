@@ -218,6 +218,12 @@
 // //￥7,￥500,￥8,123,￥12
 // console.log(prices); //["￥7", 500, 8123, 12]
 
-let array = [1, 2, "mandy", "chen", 6];
-console.log(array.toString()); //1,2,mandy,chen,6
-console.log(array);//[1, 2, "mandy", "chen", 6]
+// let array = [1, 2, "mandy", "chen", 6];
+// console.log(array.toString()); //1,2,mandy,chen,6
+// console.log(array);//[1, 2, "mandy", "chen", 6]
+
+let array = [1, 2, 3];
+console.log(array.unshift(3, 4, 5)); //6
+console.log(array); //[3, 4, 5, 1, 2, 3]
+console.log(array.unshift("mandy")); //7
+console.log(array); //["mandy", 3, 4, 5, 1, 2, 3]
