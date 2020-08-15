@@ -21,6 +21,14 @@ var _ = require('lodash');
 // console.log(_.differenceBy(array, [4.3, 5, 3, 7.9], Math.floor)); //[ 2.1 ]
 // console.log(array); //[ 2.1, 3.3, 4.5, 7.3 ]
 
-let array = [[1, 2], [3, 4], [5, 6]];
-console.log(_.differenceWith(array, [[3, 4]], _.isEqual)); //[ [ 1, 2 ], [ 5, 6 ] ]
-console.log(array); //[ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ] ]
+// let array = [[1, 2], [3, 4], [5, 6]];
+// console.log(_.differenceWith(array, [[3, 4]], _.isEqual)); //[ [ 1, 2 ], [ 5, 6 ] ]
+// console.log(array); //[ [ 1, 2 ], [ 3, 4 ], [ 5, 6 ] ]
+
+let array = [1, 2, 3, 4, 5];
+console.log(_.drop(array, 0)); //[ 1, 2, 3, 4, 5 ]
+console.log(array);  //[ 1, 2, 3, 4, 5 ]
+console.log(_.drop(array, 2)); //[ 3, 4, 5 ]
+console.log(array); //[ 1, 2, 3, 4, 5 ]
+console.log(_.drop(array, 9)); //[]
+console.log(array); //[ 1, 2, 3, 4, 5 ]
