@@ -213,7 +213,11 @@
 // console.log(array.splice(3)); // ["age", "num"]
 // console.log(array); // ["mandy", "delete", "chen"]
 
-var prices = ['￥7', 500, 8123, 12];
-console.log(prices.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }));
-//￥7,￥500,￥8,123,￥12
-console.log(prices); //["￥7", 500, 8123, 12]
+// var prices = ['￥7', 500, 8123, 12];
+// console.log(prices.toLocaleString('ja-JP', { style: 'currency', currency: 'JPY' }));
+// //￥7,￥500,￥8,123,￥12
+// console.log(prices); //["￥7", 500, 8123, 12]
+
+let array = [1, 2, "mandy", "chen", 6];
+console.log(array.toString()); //1,2,mandy,chen,6
+console.log(array);//[1, 2, "mandy", "chen", 6]
