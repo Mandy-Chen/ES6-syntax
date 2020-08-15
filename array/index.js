@@ -197,10 +197,18 @@
 // console.log(array.some(item => item > 2));  //true
 // console.log(array);  //[1, 2, 3, 4]
 
-let array = ["mandy", "chen", "age"];
-console.log(array.sort()); //["age", "chen", "mandy"]
-console.log(array); //["age", "chen", "mandy"]
-let array1 = [1, 2, 10000, 90];
-console.log(array1.sort());  //[1, 10000, 2, 90]
-console.log(array1.sort((a,b)=>a-b)); //[1, 2, 90, 10000]
-console.log(array1);  //[1, 2, 90, 10000]
+// let array = ["mandy", "chen", "age"];
+// console.log(array.sort()); //["age", "chen", "mandy"]
+// console.log(array); //["age", "chen", "mandy"]
+// let array1 = [1, 2, 10000, 90];
+// console.log(array1.sort());  //[1, 10000, 2, 90]
+// console.log(array1.sort((a,b)=>a-b)); //[1, 2, 90, 10000]
+// console.log(array1);  //[1, 2, 90, 10000]
+
+let array = ["mandy", "chen", "age", "num"];
+console.log(array.splice(1,0,"add")); //[]
+console.log(array); //["mandy", "add", "chen", "age", "num"]
+console.log(array.splice(1,1,"delete")); //["add"]
+console.log(array); //["mandy", "delete", "chen", "age", "num"]
+console.log(array.splice(3)); // ["age", "num"]
+console.log(array); // ["mandy", "delete", "chen"]
