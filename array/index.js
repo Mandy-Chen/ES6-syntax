@@ -179,6 +179,10 @@
 // let array2=['1','2','3','4']
 // console.log(array2.reduceRight((sum,current)=>sum.concat(current))); //4321
 
-let array = ["mandy","chen","age"];
-console.log(array.reverse()); //["age","chen","mandy"]
-console.log(array); //["age","chen","mandy"]
+// let array = ["mandy","chen","age"];
+// console.log(array.reverse()); //["age","chen","mandy"]
+// console.log(array); //["age","chen","mandy"]
+
+let array=[1,2,3,4]
+console.log(array.shift()); //1
+console.log(array);  //[2,3,4]
