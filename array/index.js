@@ -183,6 +183,12 @@
 // console.log(array.reverse()); //["age","chen","mandy"]
 // console.log(array); //["age","chen","mandy"]
 
-let array=[1,2,3,4]
-console.log(array.shift()); //1
-console.log(array);  //[2,3,4]
+// let array=[1,2,3,4]
+// console.log(array.shift()); //1
+// console.log(array);  //[2,3,4]
+
+let array = [1, 2, 3, 4, 5];
+console.log(array.slice(1)); //[2, 3, 4, 5]
+console.log(array.slice(2,4));  //[3, 4]
+console.log(array.slice(-3,-1)); //[3, 4]
+console.log(array);  //[1, 2, 3, 4, 5]
