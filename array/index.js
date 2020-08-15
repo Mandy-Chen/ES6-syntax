@@ -171,10 +171,14 @@
 // console.log(array.push("age"));  //3
 // console.log(array);  //["mandy", "chen", "age"]
 
-let array=[[1,2],[3,4],[5,6]];
-console.log(array.reduceRight((sum,current)=>sum.concat(current))); 
-// [5, 6, 3, 4, 1, 2]
-let array1=[1,2,3,4];
-console.log(array1.reduceRight((sum,current)=>sum+=current));  //10
-let array2=['1','2','3','4']
-console.log(array2.reduceRight((sum,current)=>sum.concat(current))); //4321
+// let array=[[1,2],[3,4],[5,6]];
+// console.log(array.reduceRight((sum,current)=>sum.concat(current))); 
+// // [5, 6, 3, 4, 1, 2]
+// let array1=[1,2,3,4];
+// console.log(array1.reduceRight((sum,current)=>sum+=current));  //10
+// let array2=['1','2','3','4']
+// console.log(array2.reduceRight((sum,current)=>sum.concat(current))); //4321
+
+let array = ["mandy","chen","age"];
+console.log(array.reverse()); //["age","chen","mandy"]
+console.log(array); //["age","chen","mandy"]
