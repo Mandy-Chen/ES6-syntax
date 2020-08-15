@@ -1,0 +1,24 @@
+{
+  "name": "es6-sntax",
+  "version": "1.0.0",
+  "description": "博客： https://blog.csdn.net/fenger_c/article/details/107898336",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mandy-Chen/ES6-syntax.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mandy-Chen/ES6-syntax/issues"
+  },
+  "homepage": "https://github.com/Mandy-Chen/ES6-syntax#readme"
+}
