@@ -106,7 +106,10 @@ var _ = require('lodash');
 
 // console.log(_.intersectionWith([1, 2], [2, 4], _.isEqual)); //[2]
 
-let array = [1, 2, 3, 4];
-console.log(_.join(array, "*")); //1*2*3*4
-console.log(array); //[ 1, 2, 3, 4 ]
+// let array = [1, 2, 3, 4];
+// console.log(_.join(array, "*")); //1*2*3*4
+// console.log(array); //[ 1, 2, 3, 4 ]
+
+let array = [3, 2, 1];
+console.log(_.last(array)); //1
 
