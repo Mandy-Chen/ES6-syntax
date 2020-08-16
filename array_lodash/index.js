@@ -113,7 +113,11 @@ var _ = require('lodash');
 // let array = [3, 2, 1];
 // console.log(_.last(array)); //1
 
-let array = [2, 1, 3, 2, 5, 3];
-console.log(_.lastIndexOf(array, 2)); //3
-console.log(_.lastIndexOf(array, 2, 1)); //0
+// let array = [2, 1, 3, 2, 5, 3];
+// console.log(_.lastIndexOf(array, 2)); //3
+// console.log(_.lastIndexOf(array, 2, 1)); //0
+
+let array = [1, 2, 3, 4, 5];
+console.log(_.nth(array, 3)); // 4
+console.log(_.nth(array, -4));  // 2
 
