@@ -174,5 +174,12 @@ var _ = require('lodash');
 // console.log(_.sortedIndexBy(array, 3, item => item > 2)); //2
 // console.log(_.sortedIndexBy(array, 3, item => item > 3)); //0
 
-let array = [1, 2, 3, 3, 3, 4, 5];
-console.log(_.sortedLastIndexOf(array, 3));
+// let array = [1, 2, 3, 3, 3, 4, 5];
+// console.log(_.sortedLastIndexOf(array, 3)); //4
+
+let array = [1, 3, 1, 2, 4, 3, 5];
+console.log(_.sortedUniq(array)); // [1,3,1,2,4,3,5]
+console.log(array); //[1, 3, 1, 2, 4, 3, 5]
+let array1 = [1, 1, 2, 2, 3, 4, 5];
+console.log(_.sortedUniq(array1)); //[ 1, 2, 3, 4, 5 ]
+console.log(array1); //[1, 1, 2, 2, 3, 4, 5]
