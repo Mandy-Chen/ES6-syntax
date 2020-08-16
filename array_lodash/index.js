@@ -85,8 +85,12 @@ var _ = require('lodash');
 // console.log(_.flattenDeep(array)); //[ 1, 2, 3, 4, 5, 6 ]
 // console.log(array); //[[1, 2], 3, [4, [5, 6]]]
 
-let array = [[1, 2], 3, [4, [5, [6,7]]]];
-console.log(_.flattenDepth(array, 2)); //[ 1, 2, 3, 4, 5, [ 6, 7 ] ]
+// let array = [[1, 2], 3, [4, [5, [6,7]]]];
+// console.log(_.flattenDepth(array, 2)); //[ 1, 2, 3, 4, 5, [ 6, 7 ] ]
+
+let array = [["name", "mandy"], ["age", 18]];
+console.log(_.fromPairs(array)); //{ name: 'mandy', age: 18 }
+console.log(array); //[ [ 'name', 'mandy' ], [ 'age', 18 ] ]
 
 
 
