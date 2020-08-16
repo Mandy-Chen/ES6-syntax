@@ -210,4 +210,7 @@ var _ = require('lodash');
 // let array = [{ "name": "mandy", "age": 18 }, { "name": "chen", "age": 16 }];
 // console.log(_.takeWhile(array, item => item.age > 16)); //[ { name: 'mandy', age: 18 } ]
 
-console.log(_.union([3, 3, 1, 4], [2, 5, 5, 6])); //[ 3, 1, 4, 2, 5, 6 ]
+// console.log(_.union([3, 3, 1, 4], [2, 5, 5, 6])); //[ 3, 1, 4, 2, 5, 6 ]
+
+console.log(_.unionBy([2.1, 1.4, 5.8], [3.1, 1.3, 5.2, 7.1], Math.floor));
+//[ 2.1, 1.4, 5.8, 3.1, 7.1 ]
