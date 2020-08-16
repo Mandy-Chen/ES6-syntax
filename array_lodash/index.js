@@ -246,5 +246,7 @@ var _ = require('lodash');
 
 // console.log(_.xor([4, 3, 2], [8, 2, 4])); //[ 3, 8 ]
 
-console.log(_.xorBy([2.4, 4.3, 1.3], [2.7, 6.3, 1, 9], Math.floor));
-//[ 4.3, 6.3, 9 ]
+// console.log(_.xorBy([2.4, 4.3, 1.3], [2.7, 6.3, 1, 9], Math.floor));
+// //[ 4.3, 6.3, 9 ]
+
+console.log(_.xorWith([1, 4, 3, 2], [1, 3, 4, 7], _.isEqual)); //[ 2, 7 ]
