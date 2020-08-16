@@ -212,5 +212,7 @@ var _ = require('lodash');
 
 // console.log(_.union([3, 3, 1, 4], [2, 5, 5, 6])); //[ 3, 1, 4, 2, 5, 6 ]
 
-console.log(_.unionBy([2.1, 1.4, 5.8], [3.1, 1.3, 5.2, 7.1], Math.floor));
-//[ 2.1, 1.4, 5.8, 3.1, 7.1 ]
+// console.log(_.unionBy([2.1, 1.4, 5.8], [3.1, 1.3, 5.2, 7.1], Math.floor));
+// //[ 2.1, 1.4, 5.8, 3.1, 7.1 ]
+
+console.log(_.unionWith([1, 3, 2], [4, 5, 3, 2], _.isEqual)); //[ 1, 3, 2, 4, 5 ]
