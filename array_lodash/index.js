@@ -226,5 +226,8 @@ var _ = require('lodash');
 // console.log(_.zip(["mandy", "chen"], [16, 18], [666, 999])); 
 // //[ [ 'mandy', 16, 666 ], [ 'chen', 18, 999 ] ]
 
-console.log(_.unzip([[ 'mandy', 16, 666 ], [ 'chen', 18, 999 ]]));
-//[ [ 'mandy', 'chen' ], [ 16, 18 ], [ 666, 999 ] ]
+// console.log(_.unzip([[ 'mandy', 16, 666 ], [ 'chen', 18, 999 ]]));
+// //[ [ 'mandy', 'chen' ], [ 16, 18 ], [ 666, 999 ] ]
+
+console.log(_.zipObject(["name", "age"], ["mandy", 18]));
+//{ name: 'mandy', age: 18 }
