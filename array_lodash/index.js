@@ -145,6 +145,10 @@ var _ = require('lodash');
 // console.log(_.remove(array, item => item > 2)); //[ 3, 4 ]
 // console.log(array); //[ 1, 2 ]
 
-let array = [1, 2, 3, 4];
-console.log(_.reverse(array)); //[ 4, 3, 2, 1 ]
-console.log(array); //[ 4, 3, 2, 1 ]
+// let array = [1, 2, 3, 4];
+// console.log(_.reverse(array)); //[ 4, 3, 2, 1 ]
+// console.log(array); //[ 4, 3, 2, 1 ]
+
+let array = [1, 2, 3, 4, 5, 6];
+console.log(_.slice(array, 3, 4)); //[ 4 ]
+console.log(array); //[ 1, 2, 3, 4, 5, 6 ]
