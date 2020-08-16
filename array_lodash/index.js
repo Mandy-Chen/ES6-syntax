@@ -47,8 +47,16 @@ var _ = require('lodash');
 // console.log(_.dropRightWhile(array,item=>item>3)); //[ 1, 2, 3 ]
 // console.log(array); //[ 1, 2, 3, 4, 5, 6 ]
 
-let array = [1, 2, 3, 4, 5, 6];
-console.log(_.dropWhile(array, item => item > 0)); //[]
-console.log(_.dropWhile(array, item => item > 3)); //[1, 2, 3, 4, 5, 6]
-console.log(_.dropWhile([6,5,4,3,2,1],item=>item>3)); //[ 3, 2, 1 ]
-console.log(_.dropWhile([3,2,6,4,5,1],item=>item>3)); //[ 3, 2, 6, 4, 5, 1 ]
+// let array = [1, 2, 3, 4, 5, 6];
+// console.log(_.dropWhile(array, item => item > 0)); //[]
+// console.log(_.dropWhile(array, item => item > 3)); //[1, 2, 3, 4, 5, 6]
+// console.log(_.dropWhile([6,5,4,3,2,1],item=>item>3)); //[ 3, 2, 1 ]
+// console.log(_.dropWhile([3,2,6,4,5,1],item=>item>3)); //[ 3, 2, 6, 4, 5, 1 ]
+
+let array = [1, 2, 3, 4, 5];
+console.log(_.fill(array, 9, 1, 3)); //[ 1, 9, 9, 4, 5 ]
+console.log(array); //[ 1, 9, 9, 4, 5 ]
+console.log(_.fill(array, 666)); //[ 666, 666, 666, 666, 666 ]
+console.log(array); //[ 666, 666, 666, 666, 666 ]
+console.log(_.fill(array, 777, 3)); //[ 666, 666, 666, 777, 777 ]
+console.log(array); //[ 666, 666, 666, 777, 777 ]
