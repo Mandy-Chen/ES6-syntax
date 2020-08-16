@@ -191,8 +191,14 @@ var _ = require('lodash');
 // console.log(_.tail(array)); //[ 2, 3, 4 ]
 // console.log(array);  //[1, 2, 3, 4]
 
-let array = [1, 2, 3, 4, 5, 6, 7];
-console.log(_.take(array)); //[ 1 ]
-console.log(_.take(array, 2)); //[ 1, 2 ]
-console.log(_.take(array, 0)); //[]
-console.log(_.take(array, 9)); //[1, 2, 3, 4, 5, 6, 7]
+// let array = [1, 2, 3, 4, 5, 6, 7];
+// console.log(_.take(array)); //[ 1 ]
+// console.log(_.take(array, 2)); //[ 1, 2 ]
+// console.log(_.take(array, 0)); //[]
+// console.log(_.take(array, 9)); //[1, 2, 3, 4, 5, 6, 7]
+
+let array = [1, 2, 3, 4, 5, 6];
+console.log(_.takeRight(array)); //[ 6 ]
+console.log(_.takeRight(array, 2)); //[ 5, 6 ]
+console.log(_.takeRight(array, 0)); //[]
+console.log(_.takeRight(array, 9)); //[ 1, 2, 3, 4, 5, 6 ]
