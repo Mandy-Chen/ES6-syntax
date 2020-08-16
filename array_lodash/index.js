@@ -235,5 +235,7 @@ var _ = require('lodash');
 // console.log(_.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]));
 // // { a: { b: [ [Object], [Object] ] } }
 
-console.log(_.zipWith([1, 2, 3], [4, 5, 6], [7, 8, 9], (a, b, c) => a + b + c)); 
-//[ 12, 15, 18 ]
+// console.log(_.zipWith([1, 2, 3], [4, 5, 6], [7, 8, 9], (a, b, c) => a + b + c)); 
+// //[ 12, 15, 18 ]
+
+console.log(_.unzipWith([[1, 2], [10, 20]], _.add)); //[ 11, 22 ]
