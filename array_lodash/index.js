@@ -184,5 +184,9 @@ var _ = require('lodash');
 // console.log(_.sortedUniq(array1)); //[ 1, 2, 3, 4, 5 ]
 // console.log(array1); //[1, 1, 2, 2, 3, 4, 5]
 
-console.log(_.sortedUniqBy([1.2, 2.1, 2.9, 3.7, 3.3, 4, 5], Math.floor));
-//[ 1.2, 2.1, 3.7, 4, 5 ]
+// console.log(_.sortedUniqBy([1.2, 2.1, 2.9, 3.7, 3.3, 4, 5], Math.floor));
+// //[ 1.2, 2.1, 3.7, 4, 5 ]
+
+let array = [1, 2, 3, 4];
+console.log(_.tail(array)); //[ 2, 3, 4 ]
+console.log(array);  //[1, 2, 3, 4]
