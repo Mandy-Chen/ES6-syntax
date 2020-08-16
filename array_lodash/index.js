@@ -133,6 +133,10 @@ var _ = require('lodash');
 // console.log(_.pullAllBy(array, [1, 2], item => item > 3));  //[ 4 ]
 // console.log(array); //[ 4 ]
 
-let array = [1, 2, 3, 1, 1, 4, 2, 6];
-console.log(_.pullAllWith(array, [1], _.isEqual)); //[ 2, 3, 4, 2, 6 ]
-console.log(array); //[ 2, 3, 4, 2, 6 ]
+// let array = [1, 2, 3, 1, 1, 4, 2, 6];
+// console.log(_.pullAllWith(array, [1], _.isEqual)); //[ 2, 3, 4, 2, 6 ]
+// console.log(array); //[ 2, 3, 4, 2, 6 ]
+
+let array = [1, 2, 3, 4];
+console.log(_.pullAt(array, 1, 3));  //[ 2, 4 ]
+console.log(array);   //[ 1, 3 ]
