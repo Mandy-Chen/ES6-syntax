@@ -66,7 +66,10 @@ var _ = require('lodash');
 // console.log(_.findIndex(array, item => item > 3, 4)); //4
 // console.log(array); //[1,2,3,4,5,3,2,5]
 
-let array = [1, 2, 3, 4, 5, 3, 2, 5];
-console.log(_.findLastIndex(array, item => item > 3)); //7
-console.log(_.findLastIndex(array, item => item > 3, 4)); //4
-console.log(array); //[1,2,3,4,5,3,2,5]
+// let array = [1, 2, 3, 4, 5, 3, 2, 5];
+// console.log(_.findLastIndex(array, item => item > 3)); //7
+// console.log(_.findLastIndex(array, item => item > 3, 4)); //4
+// console.log(array); //[1,2,3,4,5,3,2,5]
+
+let array = [3, 2, 1];
+console.log(_.head(array)); //
