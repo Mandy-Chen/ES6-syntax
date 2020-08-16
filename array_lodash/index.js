@@ -244,4 +244,7 @@ var _ = require('lodash');
 // console.log(_.without(array, 1, 2)); //[ 3, 4, 3, 5 ]
 // console.log(array); //[1, 2, 3, 4, 2, 3, 1, 5]
 
-console.log(_.xor([4, 3, 2], [8, 2, 4])); //[ 3, 8 ]
+// console.log(_.xor([4, 3, 2], [8, 2, 4])); //[ 3, 8 ]
+
+console.log(_.xorBy([2.4, 4.3, 1.3], [2.7, 6.3, 1, 9], Math.floor));
+//[ 4.3, 6.3, 9 ]
