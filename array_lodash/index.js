@@ -96,8 +96,11 @@ var _ = require('lodash');
 // console.log(_.indexOf(array, 2)); //1
 // console.log(_.indexOf(array, 2, 2)); //3
 
-let array = [1, 2, 3, 4];
-console.log(_.initial(array)); //[ 1, 2, 3 ]
-console.log(array); //[ 1, 2, 3, 4 ]
+// let array = [1, 2, 3, 4];
+// console.log(_.initial(array)); //[ 1, 2, 3 ]
+// console.log(array); //[ 1, 2, 3, 4 ]
+
+console.log(_.intersection([1, 2], [2, 3], [4, 2])); //[ 2 ]
+
 
 
