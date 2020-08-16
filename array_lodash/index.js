@@ -100,7 +100,8 @@ var _ = require('lodash');
 // console.log(_.initial(array)); //[ 1, 2, 3 ]
 // console.log(array); //[ 1, 2, 3, 4 ]
 
-console.log(_.intersection([1, 2], [2, 3], [4, 2])); //[ 2 ]
+// console.log(_.intersection([1, 2], [2, 3], [4, 2])); //[ 2 ]
 
+console.log(_.intersectionBy([1.1, 2.2], [2.4, 5.1], Math.floor)); //[2.2]
 
 
