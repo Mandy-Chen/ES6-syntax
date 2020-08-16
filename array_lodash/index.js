@@ -221,4 +221,7 @@ var _ = require('lodash');
 
 // console.log(_.unionBy([2.1, 2.7, 4.2, 4.7], Math.floor)); //[ 2.1, 4.2 ]
 
-console.log(_.unionWith([2, 3, 4], [4, 3, 5, 6], _.isEqual)); //[ 2, 3, 4, 5, 6 ]
+// console.log(_.unionWith([2, 3, 4], [4, 3, 5, 6], _.isEqual)); //[ 2, 3, 4, 5, 6 ]
+
+console.log(_.zip(["mandy", "chen"], [16, 18], [666, 999])); 
+//[ [ 'mandy', 16, 666 ], [ 'chen', 18, 999 ] ]
