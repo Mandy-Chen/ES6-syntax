@@ -61,7 +61,12 @@ var _ = require('lodash');
 // console.log(_.fill(array, 777, 3)); //[ 666, 666, 666, 777, 777 ]
 // console.log(array); //[ 666, 666, 666, 777, 777 ]
 
+// let array = [1, 2, 3, 4, 5, 3, 2, 5];
+// console.log(_.findIndex(array, item => item > 3)); //3
+// console.log(_.findIndex(array, item => item > 3, 4)); //4
+// console.log(array); //[1,2,3,4,5,3,2,5]
+
 let array = [1, 2, 3, 4, 5, 3, 2, 5];
-console.log(_.findIndex(array, item => item > 3)); //3
-console.log(_.findIndex(array, item => item > 3, 4)); //4
+console.log(_.findLastIndex(array, item => item > 3)); //7
+console.log(_.findLastIndex(array, item => item > 3, 4)); //4
 console.log(array); //[1,2,3,4,5,3,2,5]
