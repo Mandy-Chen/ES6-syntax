@@ -206,5 +206,8 @@ var _ = require('lodash');
 // let array = [{"name":"mandy"},{"age":18} ];
 // console.log(_.takeRightWhile(array,  item => item.age >10)); //[ { age: 18 } ]
 // console.log(_.takeRightWhile(array,  item => item.age > 19)); //[]
-let array = [{ "name": "mandy", "age": 18 }, { "name": "chen", "age": 16 }];
-console.log(_.takeWhile(array, item => item.age > 16)); //[ { name: 'mandy', age: 18 } ]
+
+// let array = [{ "name": "mandy", "age": 18 }, { "name": "chen", "age": 16 }];
+// console.log(_.takeWhile(array, item => item.age > 16)); //[ { name: 'mandy', age: 18 } ]
+
+console.log(_.union([3, 3, 1, 4], [2, 5, 5, 6])); //[ 3, 1, 4, 2, 5, 6 ]
