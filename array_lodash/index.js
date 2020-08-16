@@ -217,4 +217,6 @@ var _ = require('lodash');
 
 // console.log(_.unionWith([1, 3, 2], [4, 5, 3, 2], _.isEqual)); //[ 1, 3, 2, 4, 5 ]
 
-console.log(_.uniq([1, 1, 4, 3, 5, 1, 3, 4])); //[ 1, 4, 3, 5 ]
+// console.log(_.uniq([1, 1, 4, 3, 5, 1, 3, 4])); //[ 1, 4, 3, 5 ]
+
+console.log(_.unionBy([2.1, 2.7, 4.2, 4.7], Math.floor)); //[ 2.1, 4.2 ]
