@@ -153,7 +153,12 @@ var _ = require('lodash');
 // console.log(_.slice(array, 3, 4)); //[ 4 ]
 // console.log(array); //[ 1, 2, 3, 4, 5, 6 ]
 
-let array = [1, 2, 4];
-console.log(_.sortedIndex(array, 3)); //2
-console.log(_.sortedIndex(array, 2)); //1
-console.log(array); //[ 1, 2, 4 ]
+// let array = [1, 2, 4];
+// console.log(_.sortedIndex(array, 3)); //2
+// console.log(_.sortedIndex(array, 2)); //1
+// console.log(array); //[ 1, 2, 4 ]
+
+let array = [1, 2, 3, 4, 6, 8];
+console.log(_.sortedIndexBy(array, 5, item => item > 1));//1
+console.log(_.sortedIndexBy(array, 5, item => item > 2));//2
+console.log(_.sortedIndexBy(array, 5, item => item > 3));//3
