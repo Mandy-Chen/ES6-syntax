@@ -110,6 +110,10 @@ var _ = require('lodash');
 // console.log(_.join(array, "*")); //1*2*3*4
 // console.log(array); //[ 1, 2, 3, 4 ]
 
-let array = [3, 2, 1];
-console.log(_.last(array)); //1
+// let array = [3, 2, 1];
+// console.log(_.last(array)); //1
+
+let array = [2, 1, 3, 2, 5, 3];
+console.log(_.lastIndexOf(array, 2)); //3
+console.log(_.lastIndexOf(array, 2, 1)); //0
 
