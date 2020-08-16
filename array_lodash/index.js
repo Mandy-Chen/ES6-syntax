@@ -240,6 +240,8 @@ var _ = require('lodash');
 
 // console.log(_.unzipWith([[1, 2], [10, 20]], _.add)); //[ 11, 22 ]
 
-let array=[1, 2, 3, 4, 2, 3, 1, 5];
-console.log(_.without(array, 1, 2)); //[ 3, 4, 3, 5 ]
-console.log(array); //[1, 2, 3, 4, 2, 3, 1, 5]
+// let array=[1, 2, 3, 4, 2, 3, 1, 5];
+// console.log(_.without(array, 1, 2)); //[ 3, 4, 3, 5 ]
+// console.log(array); //[1, 2, 3, 4, 2, 3, 1, 5]
+
+console.log(_.xor([4, 3, 2], [8, 2, 4])); //[ 3, 8 ]
