@@ -123,12 +123,28 @@ describe('Object', function () {
   //     should(object).has.properties("name", "age");
   //   })
   // })
-  describe('Object.fromEntries()', function () {
-    it('key-value pair to an object.', function () {
-      let map = new Map([["name", "mandy"], ["age", 18]]);
-      let result = Object.fromEntries(map);
-       console.log(result); //{ name: 'mandy', age: 18 }
-      result.constructor.should.equal(Object);
+  // describe('Object.fromEntries()', function () {
+  //   it('key-value pair to an object.', function () {
+  //     let map = new Map([["name", "mandy"], ["age", 18]]);
+  //     let result = Object.fromEntries(map);
+  //      console.log(result); //{ name: 'mandy', age: 18 }
+  //     result.constructor.should.equal(Object);
+  //   })
+  // })
+  describe('Object.getOwnPropertyDescriptor()', function () {
+    it('The property descriptor for the own property.', function () {
+      let object = {
+        name: {
+          value: "mandy",
+          enumerable: true,
+          writable: true
+        }
+      };
+      let des = Object.getOwnPropertyDescriptor(object, "name");
+      console.log(des);
+      des.writable.should.equal(true);
+      des.value.value.should.equal("mandy");
+      des.enumerable.should.equal(true);
     })
   })
 
