@@ -333,17 +333,29 @@ describe('Object', function () {
   //     person.toString().should.equal("mandy");
   //   })
   // })
-  describe('valueOf()', function () {
-    it('Return the original value of the specified object.', function () {
-      let array=[1,2,3,4];
-      array.valueOf().should.equal(array);
-      let num=999;
-      num.valueOf().should.equal(999)
-      let fun=new Function("mandy");
-      console.log(fun);
-      let object={name:"mandy",age:19};
-      console.log(object.valueOf()); //{ name: 'mandy', age: 19 }
-    })
-  })
-});
-
+  // describe('valueOf()', function () {
+  //   it('Return the original value of the specified object.', function () {
+  //     let array=[1,2,3,4];
+  //     array.valueOf().should.equal(array);
+  //     let num=999;
+  //     num.valueOf().should.equal(999)
+  //     let fun=new Function("mandy");
+  //     console.log(fun);
+  //     let object={name:"mandy",age:19};
+  //     console.log(object.valueOf()); //{ name: 'mandy', age: 19 }
+  //   })
+  // })
+  describe('Object.seal()', function () {
+    it('Prevents new properties from being added and marks all existing properties as non-configurable.',
+      function () {
+        let object = {
+          name: "mandy"
+        }
+        Object.seal(object);
+        object.name = "chen";
+        object.name.should.equal("chen");
+        delete object.name;
+        object.name.should.equal("chen");
+      })
+  });
+})
