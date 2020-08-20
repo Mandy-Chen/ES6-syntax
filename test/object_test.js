@@ -131,20 +131,35 @@ describe('Object', function () {
   //     result.constructor.should.equal(Object);
   //   })
   // })
-  describe('Object.getOwnPropertyDescriptor()', function () {
-    it('The property descriptor for the own property.', function () {
-      let object = {
-        name: {
-          value: "mandy",
-          enumerable: true,
-          writable: true
-        }
-      };
-      let des = Object.getOwnPropertyDescriptor(object, "name");
-      console.log(des);
-      des.writable.should.equal(true);
-      des.value.value.should.equal("mandy");
-      des.enumerable.should.equal(true);
+  // describe('Object.getOwnPropertyDescriptor()', function () {
+  //   it('The property descriptor for the own property.', function () {
+  //     let object = {
+  //       name: {
+  //         value: "mandy",
+  //         enumerable: true,
+  //         writable: true
+  //       }
+  //     };
+  //     let des = Object.getOwnPropertyDescriptor(object, "name");
+  //     console.log(des);
+  //     des.writable.should.equal(true);
+  //     des.value.value.should.equal("mandy");
+  //     des.enumerable.should.equal(true);
+  //   })
+  // })
+  describe('Object.getOwnPropertyDescriptors', function () {
+    it('Gets all descriptors for the object.', function () {
+      let object = { name: "mandy" };
+      let result = Object.getOwnPropertyDescriptors(object);
+      console.log(result);
+      // {
+      //   name: {
+      //     value: 'mandy',
+      //     writable: true,
+      //     enumerable: true,
+      //     configurable: true
+      //   }
+      // }
     })
   })
 
