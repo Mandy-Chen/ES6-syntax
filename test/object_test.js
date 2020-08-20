@@ -147,21 +147,30 @@ describe('Object', function () {
   //     des.enumerable.should.equal(true);
   //   })
   // })
-  describe('Object.getOwnPropertyDescriptors', function () {
-    it('Gets all descriptors for the object.', function () {
-      let object = { name: "mandy" };
-      let result = Object.getOwnPropertyDescriptors(object);
-      console.log(result);
-      // {
-      //   name: {
-      //     value: 'mandy',
-      //     writable: true,
-      //     enumerable: true,
-      //     configurable: true
-      //   }
-      // }
+  // describe('Object.getOwnPropertyDescriptors', function () {
+  //   it('Gets all descriptors for the object.', function () {
+  //     let object = { name: "mandy" };
+  //     let result = Object.getOwnPropertyDescriptors(object);
+  //     console.log(result);
+  //     // {
+  //     //   name: {
+  //     //     value: 'mandy',
+  //     //     writable: true,
+  //     //     enumerable: true,
+  //     //     configurable: true
+  //     //   }
+  //     // }
+  //   })
+  // })
+  describe('Object.getOwnPropertyNames()', function () {
+    it('The property names of its own properties make up an array.', function () {
+      let arr = ["a", "b", "c"];
+      let object = { name: "mandy", age: 18 }
+      let result1 = Object.getOwnPropertyNames(arr);
+      let result2 = Object.getOwnPropertyNames(object);
+      console.log(result1); //[ '0', '1', '2', 'length' ]
+      console.log(result2); //[ 'name', 'age' ]
     })
   })
-
 });
 
