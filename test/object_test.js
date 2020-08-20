@@ -262,13 +262,25 @@ describe('Object', function () {
   //     Object.isFrozen(object3).should.equal(true);
   //   })
   // })
-  describe('Object.keys()', function () {
-    it('Return properties of the object.', function () {
-      let object = { name: "mandy", age: 18 }
-      let result = Object.keys(object);
-      // let result = Object.getOwnPropertyNames(object);
-      console.log(result); //[ 'name', 'age' ]
-      result.should.not.equal([ 'name', 'age' ])
+  // describe('Object.keys()', function () {
+  //   it('Return properties of the object.', function () {
+  //     let object = { name: "mandy", age: 18 }
+  //     let result = Object.keys(object);
+  //     // let result = Object.getOwnPropertyNames(object);
+  //     console.log(result); //[ 'name', 'age' ]
+  //     result.should.not.equal([ 'name', 'age' ])
+  //   })
+  // })
+  describe('Object.preventExtensions()', function () {
+    it('Cannot add a new property.', function () {
+      let object = Object.preventExtensions({});
+      try {
+        Object.defineProperty(object, "name", {
+          value: "mandy"
+        })
+      } catch (e) {
+        console.log(e);
+      }
     })
   })
 });
