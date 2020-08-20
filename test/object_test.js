@@ -233,33 +233,41 @@ describe('Object', function () {
   //     Object.isFrozen(object).should.equal(true)
   //   })
   // })
-  describe(' Object.isSealed()', function () {
-    it('Is sealed', function () {
-      let empty = {};
-      // 新建的对象默认不是密封的.
-      Object.isSealed(empty).should.equal(false);
-      // 如果空对象变的不可扩展,则它同时也会变成个密封对象.
-      Object.preventExtensions(empty);
-      Object.isSealed(empty).should.equal(true);
-      // 但如果这个对象不是空对象,则它不会变成密封对象,因为密封对象的所有自身属性必须是不可配置的.
-      var object1 = { name: "mandy" };
-      Object.preventExtensions(object1);
-      Object.isSealed(object1).should.equal(false);
-      // 如果把这个属性变的不可配置,则这个属性也就成了密封对象.
-      Object.defineProperty(object1, "name", { configurable: false });
-      Object.isSealed(object1).should.equal(true);
-      // 生成密封对象
-      var sealed = {};
-      Object.seal(sealed);
-      Object.isSealed(sealed).should.equal(true);
-      // 一个密封对象同时也是不可扩展的.
-      Object.isExtensible(sealed).should.equal(false);
-      // 一个密封对象也可以是一个冻结对象,但不是必须的.
-      Object.isFrozen(sealed).should.equal(true);
-      var object2 = Object.seal({ age: 18 });
-      Object.isFrozen(object2).should.equal(false);
-      var object3 = Object.seal({ get name() { return "mandy"; } });
-      Object.isFrozen(object3).should.equal(true);
+  // describe(' Object.isSealed()', function () {
+  //   it('Is sealed', function () {
+  //     let empty = {};
+  //     // 新建的对象默认不是密封的.
+  //     Object.isSealed(empty).should.equal(false);
+  //     // 如果空对象变的不可扩展,则它同时也会变成个密封对象.
+  //     Object.preventExtensions(empty);
+  //     Object.isSealed(empty).should.equal(true);
+  //     // 但如果这个对象不是空对象,则它不会变成密封对象,因为密封对象的所有自身属性必须是不可配置的.
+  //     var object1 = { name: "mandy" };
+  //     Object.preventExtensions(object1);
+  //     Object.isSealed(object1).should.equal(false);
+  //     // 如果把这个属性变的不可配置,则这个属性也就成了密封对象.
+  //     Object.defineProperty(object1, "name", { configurable: false });
+  //     Object.isSealed(object1).should.equal(true);
+  //     // 生成密封对象
+  //     var sealed = {};
+  //     Object.seal(sealed);
+  //     Object.isSealed(sealed).should.equal(true);
+  //     // 一个密封对象同时也是不可扩展的.
+  //     Object.isExtensible(sealed).should.equal(false);
+  //     // 一个密封对象也可以是一个冻结对象,但不是必须的.
+  //     Object.isFrozen(sealed).should.equal(true);
+  //     var object2 = Object.seal({ age: 18 });
+  //     Object.isFrozen(object2).should.equal(false);
+  //     var object3 = Object.seal({ get name() { return "mandy"; } });
+  //     Object.isFrozen(object3).should.equal(true);
+  //   })
+  // })
+  describe('Object.keys()', function () {
+    it('Return properties of the object.', function () {
+      let object = { name: "mandy", age: 18 }
+      let result = Object.getOwnPropertyNames(object);
+      console.log(result); //[ 'name', 'age' ]
+      Object.keys(object).should.not.equal([ 'name', 'age' ])
     })
   })
 });
