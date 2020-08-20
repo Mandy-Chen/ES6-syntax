@@ -17,9 +17,16 @@ var should = require('should');
 describe('Object',function(){
   describe('Object.prototype.constructor',function(){
     it('All objects inherit  constructor property from its prototype.',function(){
-      var object={};
-      object.constructor.should.equal(Object)
+      let object1={};
+      object1.constructor.should.equal(Object);
+      let object2=new Object();
+      object2.constructor.should.equal(Object);
+      let array1=[];
+      array1.constructor.should.equal(Array);
+      let array2=new Array();
+      array2.constructor.should.equal(Array);
     });
+
   });
   
 
