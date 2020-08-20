@@ -95,19 +95,32 @@ describe('Object', function () {
   //     object.name.should.equal("mandy");
   //   })
   // })
-  describe('Object.entries()', function () {
-    let object = { name: "mandy", age: 18 };
-    it('Traverse the object.', function () {
-      for(let [key,value] of Object.entries(object)){
-        console.log(key+" : "+value); 
-        //name : mandy
-        //age : 18
+  // describe('Object.entries()', function () {
+  //   let object = { name: "mandy", age: 18 };
+  //   it('Traverse the object.', function () {
+  //     for(let [key,value] of Object.entries(object)){
+  //       console.log(key+" : "+value); 
+  //       //name : mandy
+  //       //age : 18
+  //     }
+  //   })
+  //   it('array like object',function(){
+  //     let result=Object.entries(object);
+  //     console.log(result); //[ [ 'name', 'mandy' ], [ 'age', 18 ] ]
+  //     Array.isArray(result).should.equal(true)
+  //   })
+  // })
+  describe('Object.freeze()', function () {
+    it('Frozen objects are immutable.', function () {
+      let object = {
+        name: "mandy",
+        age: 18
       }
-    })
-    it('array like object',function(){
-      let result=Object.entries(object);
-      console.log(result); //[ [ 'name', 'mandy' ], [ 'age', 18 ] ]
-      Array.isArray(result).should.equal(true)
+      Object.freeze(object);
+      object.name = "chen";
+      delete object.age;
+      object.name.should.equal("mandy");
+      should(object).has.properties("name", "age");
     })
   })
 
