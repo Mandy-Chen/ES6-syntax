@@ -66,22 +66,33 @@ describe('Object', function () {
   //     result.info().should.equal("My name is mandy ,am I a girl : true");
   //   });
   // })
-  describe('Object.defineProperties', function () {
-    it('Define new property or modify existing property.', function () {
+  // describe('Object.defineProperties', function () {
+  //   it('Define new property or modify existing property.', function () {
+  //     let object = {};
+  //     Object.defineProperties(object, {
+  //       name: {
+  //         value: "mandy",
+  //         writable: true,
+  //         enumerable: true,
+  //       },
+  //       age: {
+  //         value: 18,
+  //         writable: true,
+  //       }
+  //     })
+  //     console.log(object); //{ name: 'mandy' }
+  //     object.should.not.null();
+  //   })
+  // })
+  describe('Object.defineProperty()', function () {
+    it('Define new property or modify an existing property.', function () {
       let object = {};
-      Object.defineProperties(object, {
-        name: {
-          value: "mandy",
-          writable: true,
-          enumerable: true,
-        },
-        age:{
-          value:18,
-          writable:true,
-        }
-      })
+      Object.defineProperty(object, "name", {
+        value: "mandy",
+        enumerable: true
+      });
       console.log(object); //{ name: 'mandy' }
-      object.should.not.null();
+      object.name.should.equal("mandy");
     })
   })
 
