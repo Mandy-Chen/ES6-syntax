@@ -84,15 +84,30 @@ describe('Object', function () {
   //     object.should.not.null();
   //   })
   // })
-  describe('Object.defineProperty()', function () {
-    it('Define new property or modify an existing property.', function () {
-      let object = {};
-      Object.defineProperty(object, "name", {
-        value: "mandy",
-        enumerable: true
-      });
-      console.log(object); //{ name: 'mandy' }
-      object.name.should.equal("mandy");
+  // describe('Object.defineProperty()', function () {
+  //   it('Define new property or modify an existing property.', function () {
+  //     let object = {};
+  //     Object.defineProperty(object, "name", {
+  //       value: "mandy",
+  //       enumerable: true
+  //     });
+  //     console.log(object); //{ name: 'mandy' }
+  //     object.name.should.equal("mandy");
+  //   })
+  // })
+  describe('Object.entries()', function () {
+    let object = { name: "mandy", age: 18 };
+    it('Traverse the object.', function () {
+      for(let [key,value] of Object.entries(object)){
+        console.log(key+" : "+value); 
+        //name : mandy
+        //age : 18
+      }
+    })
+    it('array like object',function(){
+      let result=Object.entries(object);
+      console.log(result); //[ [ 'name', 'mandy' ], [ 'age', 18 ] ]
+      Array.isArray(result).should.equal(true)
     })
   })
 
