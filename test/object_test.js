@@ -162,14 +162,27 @@ describe('Object', function () {
   //     // }
   //   })
   // })
-  describe('Object.getOwnPropertyNames()', function () {
-    it('The property names of its own properties make up an array.', function () {
-      let arr = ["a", "b", "c"];
-      let object = { name: "mandy", age: 18 }
-      let result1 = Object.getOwnPropertyNames(arr);
-      let result2 = Object.getOwnPropertyNames(object);
-      console.log(result1); //[ '0', '1', '2', 'length' ]
-      console.log(result2); //[ 'name', 'age' ]
+  // describe('Object.getOwnPropertyNames()', function () {
+  //   it('The property names of its own properties make up an array.', function () {
+  //     let arr = ["a", "b", "c"];
+  //     let object = { name: "mandy", age: 18 }
+  //     let result1 = Object.getOwnPropertyNames(arr);
+  //     let result2 = Object.getOwnPropertyNames(object);
+  //     console.log(result1); //[ '0', '1', '2', 'length' ]
+  //     console.log(result2); //[ 'name', 'age' ]
+  //   })
+  // })
+  describe(' Object.getOwnPropertySymbols()', function () {
+    it('An array of all Symbol properties of the object itself.', function () {
+      let object = {};
+      let a = Symbol("a");
+      let b = Symbol.for("b");
+      object[a] = "localSymbol";
+      object[b] = "globalSymbol";
+      let objectSymbols = Object.getOwnPropertySymbols(object);
+      console.log(objectSymbols)         // [Symbol(a), Symbol(b)]
+      console.log(objectSymbols[0])      // Symbol(a)
+      objectSymbols.length.should.equal(2);
     })
   })
 });
