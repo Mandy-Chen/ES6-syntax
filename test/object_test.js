@@ -201,16 +201,35 @@ describe('Object', function () {
   //     Object.is(object1, object2).should.equal(false);
   //   })
   // })
-  describe('Object.isExtensible() ', function () {
-    it('Determines whether the object is scalable.', function () {
-      let object = {};
-      Object.isExtensible(object).should.equal(true);
+  // describe('Object.isExtensible() ', function () {
+  //   it('Determines whether the object is scalable.', function () {
+  //     let object = {};
+  //     Object.isExtensible(object).should.equal(true);
+  //     Object.preventExtensions(object);
+  //     Object.isExtensible(object).should.equal(false);
+  //     let sealed = Object.isSealed({});
+  //     Object.isExtensible(sealed).should.equal(false);
+  //     let freeze = Object.freeze({});
+  //     Object.isExtensible(freeze).should.equal(false);
+  //   })
+  // })
+  describe('Object.isFrozen()', function () {
+    it('Is Frozen', function () {
+      //初始的空对象默认是非冻结对象
+      Object.isFrozen({}).should.equal(false);
+      //不可扩展的空对象是冻结对象
+      let preExten = Object.preventExtensions({});
+      Object.isFrozen(preExten).should.equal(true);
+      // 一个非空对象默认是非冻结对象
+      var object = { name: "mandy" };
+      Object.isFrozen(object).should.equal(false);
+      // 让这个对象变的不可扩展,并不意味着这个对象变成了冻结对象
+      // 因为name属性仍然是可以配置的(而且可写的).
       Object.preventExtensions(object);
-      Object.isExtensible(object).should.equal(false);
-      let sealed = Object.isSealed({});
-      Object.isExtensible(sealed).should.equal(false);
-      let freeze = Object.freeze({});
-      Object.isExtensible(freeze).should.equal(false);
+      Object.isFrozen(object).should.equal(false);
+      // 此时,如果删除了这个属性,则它会成为一个冻结对象.
+      delete object.name;
+      Object.isFrozen(object).should.equal(true)
     })
   })
 });
