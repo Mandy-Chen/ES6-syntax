@@ -193,12 +193,24 @@ describe('Object', function () {
   //     Object.getPrototypeOf(result).should.equal(object);
   //   })
   // })
-  describe('Object.is()', function () {
-    it('Determines whether two values are the same.', function () {
-      let object1 = { name: "mandy" };
-      let object2 = { name: "mandy" };
-      Object.is("mandy", "mandy").should.equal(true);
-      Object.is(object1, object2).should.equal(false);
+  // describe('Object.is()', function () {
+  //   it('Determines whether two values are the same.', function () {
+  //     let object1 = { name: "mandy" };
+  //     let object2 = { name: "mandy" };
+  //     Object.is("mandy", "mandy").should.equal(true);
+  //     Object.is(object1, object2).should.equal(false);
+  //   })
+  // })
+  describe('Object.isExtensible() ', function () {
+    it('Determines whether the object is scalable.', function () {
+      let object = {};
+      Object.isExtensible(object).should.equal(true);
+      Object.preventExtensions(object);
+      Object.isExtensible(object).should.equal(false);
+      let sealed = Object.isSealed({});
+      Object.isExtensible(sealed).should.equal(false);
+      let freeze = Object.freeze({});
+      Object.isExtensible(freeze).should.equal(false);
     })
   })
 });
