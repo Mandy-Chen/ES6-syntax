@@ -271,16 +271,24 @@ describe('Object', function () {
   //     result.should.not.equal([ 'name', 'age' ])
   //   })
   // })
-  describe('Object.preventExtensions()', function () {
-    it('Cannot add a new property.', function () {
-      let object = Object.preventExtensions({});
-      try {
-        Object.defineProperty(object, "name", {
-          value: "mandy"
-        })
-      } catch (e) {
-        console.log(e);
-      }
+  // describe('Object.preventExtensions()', function () {
+  //   it('Cannot add a new property.', function () {
+  //     let object = Object.preventExtensions({});
+  //     try {
+  //       Object.defineProperty(object, "name", {
+  //         value: "mandy"
+  //       })
+  //     } catch (e) {
+  //       console.log(e);
+  //     }
+  //   })
+  // })
+  describe('hasOwnProperty() ', function () {
+    it('Whether there are specified properties.', function () {
+      let object = {};
+      object.hasOwnProperty("name").should.equal(false);
+      object.name="mandy";
+      object.hasOwnProperty("name").should.equal(true);
     })
   })
 });
