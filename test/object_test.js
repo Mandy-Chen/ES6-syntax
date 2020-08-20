@@ -110,20 +110,27 @@ describe('Object', function () {
   //     Array.isArray(result).should.equal(true)
   //   })
   // })
-  describe('Object.freeze()', function () {
-    it('Frozen objects are immutable.', function () {
-      let object = {
-        name: "mandy",
-        age: 18
-      }
-      Object.freeze(object);
-      object.name = "chen";
-      delete object.age;
-      object.name.should.equal("mandy");
-      should(object).has.properties("name", "age");
+  // describe('Object.freeze()', function () {
+  //   it('Frozen objects are immutable.', function () {
+  //     let object = {
+  //       name: "mandy",
+  //       age: 18
+  //     }
+  //     Object.freeze(object);
+  //     object.name = "chen";
+  //     delete object.age;
+  //     object.name.should.equal("mandy");
+  //     should(object).has.properties("name", "age");
+  //   })
+  // })
+  describe('Object.fromEntries()', function () {
+    it('key-value pair to an object.', function () {
+      let map = new Map([["name", "mandy"], ["age", 18]]);
+      let result = Object.fromEntries(map);
+       console.log(result); //{ name: 'mandy', age: 18 }
+      result.constructor.should.equal(Object);
     })
   })
-
 
 });
 
