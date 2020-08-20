@@ -315,10 +315,22 @@ describe('Object', function () {
   //     array.propertyIsEnumerable("length");
   //   })
   // })
-  describe('toLocaleString() ', function () {
-    it('Returns the string of the object.', function () {
-      let object = { name: 'mandy', age: 18 };
-      console.log(object.toLocaleString());
+  // describe('toLocaleString() ', function () {
+  //   it('Returns the string of the object.', function () {
+  //     let object = { name: 'mandy', age: 18 };
+  //     console.log(object.toLocaleString()); //[object Object]
+  //   })
+  // })
+  describe('toString()', function () {
+    it('Return the string of the object.', function () {
+      function Person(name) {
+        this.name = name;
+      }
+      let person = new Person("mandy");
+      Person.prototype.toString = function PersonToString() {
+        return `${this.name}`;
+      }
+      person.toString().should.equal("mandy");
     })
   })
 });
