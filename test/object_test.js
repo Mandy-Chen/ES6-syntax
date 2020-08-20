@@ -185,12 +185,20 @@ describe('Object', function () {
   //     objectSymbols.length.should.equal(2);
   //   })
   // })
-  describe('Object.getPrototypeOf()', function () {
-    it('return object of the prototype.', function () {
-      let object = {};
-      let result = Object.create(object);
-      console.log(result);
-      Object.getPrototypeOf(result).should.equal(object);
+  // describe('Object.getPrototypeOf()', function () {
+  //   it('return object of the prototype.', function () {
+  //     let object = {};
+  //     let result = Object.create(object);
+  //     console.log(result);
+  //     Object.getPrototypeOf(result).should.equal(object);
+  //   })
+  // })
+  describe('Object.is()', function () {
+    it('Determines whether two values are the same.', function () {
+      let object1 = { name: "mandy" };
+      let object2 = { name: "mandy" };
+      Object.is("mandy", "mandy").should.equal(true);
+      Object.is(object1, object2).should.equal(false);
     })
   })
 });
