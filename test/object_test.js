@@ -304,15 +304,21 @@ describe('Object', function () {
   //     Large.prototype.isPrototypeOf(small).should.equal(true);
   //   })
   // })
-  describe('propertyIsEnumerable()', function () {
-    it('Is Enumerable of property', function () {
-      let object={};
-      let array=[];
-      object.name="mandy";
-      array[0]="mandy";
-      object.propertyIsEnumerable("name");
-      array.propertyIsEnumerable(0);
-      array.propertyIsEnumerable("length");
+  // describe('propertyIsEnumerable()', function () {
+  //   it('Is Enumerable of property', function () {
+  //     let object={};
+  //     let array=[];
+  //     object.name="mandy";
+  //     array[0]="mandy";
+  //     object.propertyIsEnumerable("name");
+  //     array.propertyIsEnumerable(0);
+  //     array.propertyIsEnumerable("length");
+  //   })
+  // })
+  describe('toLocaleString() ', function () {
+    it('Returns the string of the object.', function () {
+      let object = { name: 'mandy', age: 18 };
+      console.log(object.toLocaleString());
     })
   })
 });
