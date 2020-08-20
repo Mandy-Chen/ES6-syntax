@@ -51,20 +51,38 @@ describe('Object', function () {
   //     console.log(result); //{ '0': 'a', '1': 'b', '2': 'c' }
   //   });
   // })
-  describe('Object.create()', function () {
-    it('new object.', function () {
-      const person = {
-        isGirl: false,
-        info: function () {
-          return 'My name is ' + this.name + ' ,am I a girl : ' + this.isGirl;
+  // describe('Object.create()', function () {
+  //   it('new object.', function () {
+  //     const person = {
+  //       isGirl: false,
+  //       info: function () {
+  //         return 'My name is ' + this.name + ' ,am I a girl : ' + this.isGirl;
+  //       }
+  //     }
+  //     const result = Object.create(person);
+  //     result.name = "mandy";
+  //     result.isGirl = true;
+  //     console.log(result);  //{ name: 'mandy', isGirl: true }
+  //     result.info().should.equal("My name is mandy ,am I a girl : true");
+  //   });
+  // })
+  describe('Object.defineProperties', function () {
+    it('Define new property or modify existing property.', function () {
+      let object = {};
+      Object.defineProperties(object, {
+        name: {
+          value: "mandy",
+          writable: true,
+          enumerable: true,
+        },
+        age:{
+          value:18,
+          writable:true,
         }
-      }
-      const result = Object.create(person);
-      result.name = "mandy";
-      result.isGirl = true;
-      console.log(result);  //{ name: 'mandy', isGirl: true }
-      result.info().should.equal("My name is mandy ,am I a girl : true");
-    });
+      })
+      console.log(object); //{ name: 'mandy' }
+      object.should.not.null();
+    })
   })
 
 
