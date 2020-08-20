@@ -172,17 +172,25 @@ describe('Object', function () {
   //     console.log(result2); //[ 'name', 'age' ]
   //   })
   // })
-  describe(' Object.getOwnPropertySymbols()', function () {
-    it('An array of all Symbol properties of the object itself.', function () {
+  // describe(' Object.getOwnPropertySymbols()', function () {
+  //   it('An array of all Symbol properties of the object itself.', function () {
+  //     let object = {};
+  //     let a = Symbol("a");
+  //     let b = Symbol.for("b");
+  //     object[a] = "localSymbol";
+  //     object[b] = "globalSymbol";
+  //     let objectSymbols = Object.getOwnPropertySymbols(object);
+  //     console.log(objectSymbols)         // [Symbol(a), Symbol(b)]
+  //     console.log(objectSymbols[0])      // Symbol(a)
+  //     objectSymbols.length.should.equal(2);
+  //   })
+  // })
+  describe('Object.getPrototypeOf()', function () {
+    it('return object of the prototype.', function () {
       let object = {};
-      let a = Symbol("a");
-      let b = Symbol.for("b");
-      object[a] = "localSymbol";
-      object[b] = "globalSymbol";
-      let objectSymbols = Object.getOwnPropertySymbols(object);
-      console.log(objectSymbols)         // [Symbol(a), Symbol(b)]
-      console.log(objectSymbols[0])      // Symbol(a)
-      objectSymbols.length.should.equal(2);
+      let result = Object.create(object);
+      console.log(result);
+      Object.getPrototypeOf(result).should.equal(object);
     })
   })
 });
