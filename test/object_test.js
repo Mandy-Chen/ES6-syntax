@@ -291,17 +291,28 @@ describe('Object', function () {
   //     object.hasOwnProperty("name").should.equal(true);
   //   })
   // })
-  describe('isPrototypeOf()', function () {
-    it('Whether the object is on the prototype chain of another object.', function () {
-      function Large(){};
-      function Middle(){};
-      function Small(){};
-      Middle.prototype=Object.create(Large.prototype);
-      Small.prototype=Object.create(Middle.prototype);
-      let small=new Small();
-      Small.prototype.isPrototypeOf(small).should.equal(true);
-      Middle.prototype.isPrototypeOf(small).should.equal(true);
-      Large.prototype.isPrototypeOf(small).should.equal(true);
+  // describe('isPrototypeOf()', function () {
+  //   it('Whether the object is on the prototype chain of another object.', function () {
+  //     function Large(){};
+  //     function Middle(){};
+  //     function Small(){};
+  //     Middle.prototype=Object.create(Large.prototype);
+  //     Small.prototype=Object.create(Middle.prototype);
+  //     let small=new Small();
+  //     Small.prototype.isPrototypeOf(small).should.equal(true);
+  //     Middle.prototype.isPrototypeOf(small).should.equal(true);
+  //     Large.prototype.isPrototypeOf(small).should.equal(true);
+  //   })
+  // })
+  describe('propertyIsEnumerable()', function () {
+    it('Is Enumerable of property', function () {
+      let object={};
+      let array=[];
+      object.name="mandy";
+      array[0]="mandy";
+      object.propertyIsEnumerable("name");
+      array.propertyIsEnumerable(0);
+      array.propertyIsEnumerable("length");
     })
   })
 });
