@@ -265,9 +265,10 @@ describe('Object', function () {
   describe('Object.keys()', function () {
     it('Return properties of the object.', function () {
       let object = { name: "mandy", age: 18 }
-      let result = Object.getOwnPropertyNames(object);
+      let result = Object.keys(object);
+      // let result = Object.getOwnPropertyNames(object);
       console.log(result); //[ 'name', 'age' ]
-      Object.keys(object).should.not.equal([ 'name', 'age' ])
+      result.should.not.equal([ 'name', 'age' ])
     })
   })
 });
