@@ -369,6 +369,8 @@ describe('Object', function () {
       let object = { name: "mandy", age: 18 }
       console.log(Object.values(object)); //[ 'mandy', 18 ]
       Object.values(object).should.not.equal([ 'mandy', 18 ]);
+      console.log(Object.values("abc")); //[ 'a', 'b', 'c' ]
+      Object.values("abc").should.not.equal([ 'a', 'b', 'c' ])
     })
   })
 })
