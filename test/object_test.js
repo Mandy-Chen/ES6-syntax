@@ -345,17 +345,23 @@ describe('Object', function () {
   //     console.log(object.valueOf()); //{ name: 'mandy', age: 19 }
   //   })
   // })
-  describe('Object.seal()', function () {
-    it('Prevents new properties from being added and marks all existing properties as non-configurable.',
-      function () {
-        let object = {
-          name: "mandy"
-        }
-        Object.seal(object);
-        object.name = "chen";
-        object.name.should.equal("chen");
-        delete object.name;
-        object.name.should.equal("chen");
-      })
-  });
+  // describe('Object.seal()', function () {
+  //   it('Prevents new properties from being added and marks all existing properties as non-configurable.',
+  //     function () {
+  //       let object = {
+  //         name: "mandy"
+  //       }
+  //       Object.seal(object);
+  //       object.name = "chen";
+  //       object.name.should.equal("chen");
+  //       delete object.name;
+  //       object.name.should.equal("chen");
+  //     })
+  // });
+  describe('Object.setPrototypeOf() ', function () {
+    it('Set prototype of object to another object or null.', function () {
+      let object = Object.setPrototypeOf({}, null);
+      console.log(object); //[Object: null prototype] {}
+    })
+  })
 })
