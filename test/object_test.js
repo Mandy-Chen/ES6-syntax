@@ -358,10 +358,17 @@ describe('Object', function () {
   //       object.name.should.equal("chen");
   //     })
   // });
-  describe('Object.setPrototypeOf() ', function () {
-    it('Set prototype of object to another object or null.', function () {
-      let object = Object.setPrototypeOf({}, null);
-      console.log(object); //[Object: null prototype] {}
+  // describe('Object.setPrototypeOf() ', function () {
+  //   it('Set prototype of object to another object or null.', function () {
+  //     let object = Object.setPrototypeOf({}, null);
+  //     console.log(object); //[Object: null prototype] {}
+  //   })
+  // })
+  describe('Object.values()', function () {
+    it('Returns  array of all enumerable property values for  object.', function () {
+      let object = { name: "mandy", age: 18 }
+      console.log(Object.values(object)); //[ 'mandy', 18 ]
+      Object.values(object).should.not.equal([ 'mandy', 18 ]);
     })
   })
 })
