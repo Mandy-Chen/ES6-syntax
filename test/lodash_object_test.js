@@ -233,12 +233,21 @@ describe('Lodash_Object', function () {
     //         _.get(object, 'a[0].b.c.d', 'defaultValue').should.equal('defaultValue')
     //     })
     // })
-    describe('_.has(object, path)', function () {
+    // describe('_.has(object, path)', function () {
+    //     it('', function () {
+    //         let object = { a: [{ b: { c: 1 } }] }
+    //         _.has(object, 'a.[0]b.c').should.equal(true);
+    //         _.has(object, ['a', '0', 'b']).should.equal(true);
+    //         _.has(object, 'a[0].b.c.d').should.equal(false)
+    //     })
+    // })
+    describe('_.hasIn(object, path)', function () {
         it('', function () {
-            let object = { a: [{ b: { c: 1 } }] }
-            _.has(object, 'a.[0]b.c').should.equal(true);
-            _.has(object, ['a', '0', 'b']).should.equal(true);
-            _.has(object, 'a[0].b.c.d').should.equal(false)
+            let object = _.create({ 'a': _.create({ b: 1 }) });
+            _.hasIn(object,'a').should.equal(true);
+            _.hasIn(object,'a.b').should.equal(true);
+            _.hasIn(object,['a','b']).should.equal(true);
+            _.hasIn(object,'b').should.equal(false)
         })
     })
 })
