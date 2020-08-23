@@ -397,11 +397,29 @@ describe('Lodash_Object', function () {
     //         console.log(object); //{ a: [ { b: [Object] } ], x: [ { y: [Object] } ] }
     //     })
     // })
-    describe('_.setWith(object, path, value, [customizer])',function(){
-        it('',function(){
-            let object={};
-            _.setWith(object,"['a']['b']",1,Object);
-            console.log(object); //{ a: { b: 1 } }
+    // describe('_.setWith(object, path, value, [customizer])',function(){
+    //     it('',function(){
+    //         let object={};
+    //         _.setWith(object,"['a']['b']",1,Object);
+    //         console.log(object); //{ a: { b: 1 } }
+    //     })
+    // })
+    describe('_.transform(object, [iteratee=_.identity], [accumulator])', function () {
+        it('', function () {
+            let array = [2, 3, 4];
+            let result = _.transform(array, function (result, n) {
+                result.push(n *= n);
+                return n % 2 == 0;
+            }, []);
+            console.log(result); //[ 4, 9 ]
+            result = _.transform({ 'a': 1, 'b': 2, 'c': 1 }, function (result, value, key) {
+                (result[value] || (result[value] = [])).push(key);
+                console.log((result[value] || (result[value] = [])));
+                //[ 'a' ]
+                //[ 'b' ]
+                //[ 'a', 'c' ]
+            }, {});
+            console.log(result); //{ '1': [ 'a', 'c' ], '2': [ 'b' ] }
         })
     })
 })
