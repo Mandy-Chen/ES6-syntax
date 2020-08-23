@@ -131,18 +131,33 @@ describe('Lodash_Object', function () {
     //         _.findKey(users,'active').should.equal('chen');
     //     })
     // })
-    describe('_.findLastKey(object, [predicate=_.identity])', function () {
+    // describe('_.findLastKey(object, [predicate=_.identity])', function () {
+    //     it('', function () {
+    //         let users = {
+    //             'mandy': { 'id': 1, 'active': false },
+    //             'chen': { 'id': 2, 'active': true },
+    //             'eva': { 'id': 3, 'active': false },
+    //             'viki':{'id': 3, 'active': false }
+    //         }
+    //         _.findLastKey(users, item => item.id > 0).should.equal('viki');
+    //         _.findLastKey(users, { 'id': 3, 'active': false }).should.equal('viki');
+    //         _.findLastKey(users, ['active', false]).should.equal('viki');
+    //         _.findLastKey(users, 'active').should.equal('chen');
+    //     })
+    // })
+    describe('_.forIn(object, [iteratee=_.identity])', function () {
         it('', function () {
-            let users = {
-                'mandy': { 'id': 1, 'active': false },
-                'chen': { 'id': 2, 'active': true },
-                'eva': { 'id': 3, 'active': false },
-                'viki':{'id': 3, 'active': false }
+            function Person() {
+                this.a = 1;
+                this.b = 2;
             }
-            _.findLastKey(users, item => item.id > 0).should.equal('viki');
-            _.findLastKey(users, { 'id': 3, 'active': false }).should.equal('viki');
-            _.findLastKey(users, ['active', false]).should.equal('viki');
-            _.findLastKey(users, 'active').should.equal('chen');
+            Person.prototype.c = 3;
+            _.forIn(new Person, function (value, key) {
+                console.log(value + ' ' + key);
+            })
+            //1 a
+            //2 b
+            //3 c
         })
     })
 })
