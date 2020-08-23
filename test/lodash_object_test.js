@@ -31,18 +31,24 @@ describe('Lodash_Object', function () {
     //         console.log(target); //{ id: 2, name: 'zhang', age: 18 }
     //     })
     // })
-    describe('_.assignWith()', function () {
+    // describe('_.assignWith()', function () {
+    //     it('', function () {
+    //         let target = { id: 0 }
+    //         _.assignWith(target, { id: 1, name: "a" }, { id: 2, age: 18 })
+    //         console.log(target); //{ id: 2, name: 'a', age: 18 }
+    //     })
+    //     it("", function () {
+    //         function customizer(objValue, srcValue) {
+    //             return _.isUndefined(objValue) ? srcValue : objValue;
+    //         }
+    //         var defaults = _.partialRight(_.assignInWith, customizer);
+    //         console.log(defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 })); //{ a: 1, b: 2 }
+    //     })
+    // })
+    describe('_.at(object, [paths])', function () {
         it('', function () {
-            let target = { id: 0 }
-            _.assignWith(target, { id: 1, name: "a" }, { id: 2, age: 18 })
-            console.log(target); //{ id: 2, name: 'a', age: 18 }
-        })
-        it("", function () {
-            function customizer(objValue, srcValue) {
-                return _.isUndefined(objValue) ? srcValue : objValue;
-            }
-            var defaults = _.partialRight(_.assignInWith, customizer);
-            console.log(defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 })); //{ a: 1, b: 2 }
+            let object = { a: [{ b: { c: { d: 1 } } }, {e:2}] };
+            console.log(_.at(object, ['a[0].b.c.d', 'a[1]'])); //[ 1, { e: 2 } ]
         })
     })
 })
