@@ -445,15 +445,25 @@ describe('Lodash_Object', function () {
     //         console.log(object); //{ a: { b: 4 } }
     //     })
     // })
-    describe('_.values(object)', function () {
+    // describe('_.values(object)', function () {
+    //     it('', function () {
+    //         function Person() {
+    //             this.a = 'a';
+    //             this.b = 'b';
+    //         }
+    //         Person.prototype.c = 'c';
+    //         console.log(_.values(new Person)); //[ 'a', 'b' ]
+    //         console.log(_.values("mandy")); //[ 'm', 'a', 'n', 'd', 'y' ]
+    //     })
+    // })
+    describe('_.valuesIn(object)', function (){
         it('', function () {
             function Person() {
                 this.a = 'a';
                 this.b = 'b';
             }
             Person.prototype.c = 'c';
-            console.log(_.values(new Person)); //[ 'a', 'b' ]
-            console.log(_.values("mandy")); //[ 'm', 'a', 'n', 'd', 'y' ]
+            console.log(_.valuesIn(new Person)); //[ 'a', 'b', 'c' ]
         })
     })
 })
