@@ -73,9 +73,19 @@ describe('Lodash_Object', function () {
     //         console.log(object); //{ a: 3, b: 4 }
     //     })
     // })
-    describe('_.defaultsDeep(object, [sources])', function () {
-        let object = { a: { b: 1 }, a: { b: { c: 2 } } };
-        _.defaultsDeep(object);
-        console.log(object); //{ a: { b: { c: 2 } } }
+    // describe('_.defaultsDeep(object, [sources])', function () {
+    //     let object = { a: { b: 1 }, a: { b: { c: 2 } } };
+    //     _.defaultsDeep(object);
+    //     console.log(object); //{ a: { b: { c: 2 } } }
+    // })
+    describe('_.toPairs(object)', function () {
+        function Student() {
+            this.name = "mandy";
+            this.age = 18;
+        }
+        Student.prototype.id = 1;
+        let student = new Student;
+        console.log(_.toPairs(student)); //[ [ 'name', 'mandy' ], [ 'age', 18 ] ]
+        console.log(student);// Student { name: 'mandy', age: 18 }
     })
 })
