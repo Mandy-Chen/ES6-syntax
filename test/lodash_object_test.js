@@ -429,13 +429,20 @@ describe('Lodash_Object', function () {
     //         _.unset(object,'a[0].b.c').should.equal(true)
     //     })
     // })
-    describe('_.update(object, path, updater)', function () {
+    // describe('_.update(object, path, updater)', function () {
+    //     it('', function () {
+    //         let object = { 'a': [{ 'b': { 'c': 2 } }] };
+    //         _.update(object, 'a[0].b.c', item => item * item);
+    //         object.a[0].b.c.should.equal(4);
+    //         _.update(object, 'x[0].y.z', item => item ? item + 1 : 99);
+    //         object.x[0].y.z.should.equal(99);
+    //     })
+    // })
+    describe('_.updateWith(object, path, updater, [customizer])', function () {
         it('', function () {
-            let object = { 'a': [{ 'b': { 'c': 2 } }] };
-            _.update(object, 'a[0].b.c', item => item * item);
-            object.a[0].b.c.should.equal(4);
-            _.update(object, 'x[0].y.z', item => item ? item + 1 : 99);
-            object.x[0].y.z.should.equal(99);
+            let object = {};
+            _.updateWith(object, "['a']['b']",_.constant(4), Object);
+            console.log(object); //{ a: { b: 4 } }
         })
     })
 })
