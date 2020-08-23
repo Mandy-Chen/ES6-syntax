@@ -404,22 +404,29 @@ describe('Lodash_Object', function () {
     //         console.log(object); //{ a: { b: 1 } }
     //     })
     // })
-    describe('_.transform(object, [iteratee=_.identity], [accumulator])', function () {
+    // describe('_.transform(object, [iteratee=_.identity], [accumulator])', function () {
+    //     it('', function () {
+    //         let array = [2, 3, 4];
+    //         let result = _.transform(array, function (result, n) {
+    //             result.push(n *= n);
+    //             return n % 2 == 0;
+    //         }, []);
+    //         console.log(result); //[ 4, 9 ]
+    //         result = _.transform({ 'a': 1, 'b': 2, 'c': 1 }, function (result, value, key) {
+    //             (result[value] || (result[value] = [])).push(key);
+    //             console.log((result[value] || (result[value] = [])));
+    //             //[ 'a' ]
+    //             //[ 'b' ]
+    //             //[ 'a', 'c' ]
+    //         }, {});
+    //         console.log(result); //{ '1': [ 'a', 'c' ], '2': [ 'b' ] }
+    //     })
+    // })
+    describe('_.unset(object, path)', function () {
         it('', function () {
-            let array = [2, 3, 4];
-            let result = _.transform(array, function (result, n) {
-                result.push(n *= n);
-                return n % 2 == 0;
-            }, []);
-            console.log(result); //[ 4, 9 ]
-            result = _.transform({ 'a': 1, 'b': 2, 'c': 1 }, function (result, value, key) {
-                (result[value] || (result[value] = [])).push(key);
-                console.log((result[value] || (result[value] = [])));
-                //[ 'a' ]
-                //[ 'b' ]
-                //[ 'a', 'c' ]
-            }, {});
-            console.log(result); //{ '1': [ 'a', 'c' ], '2': [ 'b' ] }
+            let object = { 'a': [{ 'b': { 'c': { 'd': 1 } } }] }
+            _.unset(object, ['a', [0], 'b', 'c', 'd']).should.equal(true);
+            _.unset(object,'a[0].b.c').should.equal(true)
         })
     })
 })
