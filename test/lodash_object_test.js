@@ -312,16 +312,24 @@ describe('Lodash_Object', function () {
     //         //{ a3: 3, b4: 4 }
     //     })
     // })
-    describe('_.mapValues(object, [iteratee=_.identity])', function () {
+    // describe('_.mapValues(object, [iteratee=_.identity])', function () {
+    //     it('', function () {
+    //         let object = {
+    //             'teacher': { 'name': 'zhang', 'salary': '99999' },
+    //             'student': { 'name': 'chen', 'salary': '66666' }
+    //         }
+    //         console.log(_.mapValues(object,function(o){return o.salary;}));
+    //         //{ teacher: '99999', student: '66666' }
+    //         console.log(_.mapValues(object,'salary'));
+    //         //{ teacher: '99999', student: '66666' }
+    //     })
+    // })
+    describe('_.merge(object, [sources])', function () {
         it('', function () {
-            let object = {
-                'teacher': { 'name': 'zhang', 'salary': '99999' },
-                'student': { 'name': 'chen', 'salary': '66666' }
-            }
-            console.log(_.mapValues(object,function(o){return o.salary;}));
-            //{ teacher: '99999', student: '66666' }
-            console.log(_.mapValues(object,'salary'));
-            //{ teacher: '99999', student: '66666' }
+            let object ={'a':[{'b':1,'c':2},{'d':3}]};
+            let other={'a':[{'b':11,'e':4},{'f':5,'g':6}]}
+            console.log(_.merge(object,other));
+            //{ a: [ { b: 11, c: 2, e: 4 }, { d: 3, f: 5, g: 6 } ] }
         })
     })
 })
