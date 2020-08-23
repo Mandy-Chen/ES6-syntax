@@ -189,18 +189,29 @@ describe('Lodash_Object', function () {
     //         //2 b
     //     })
     // })
-    describe('_.forOwnRight(object, [iteratee=_.identity])', function () {
+    // describe('_.forOwnRight(object, [iteratee=_.identity])', function () {
+    //     it('', function () {
+    //         function Person() {
+    //             this.a = 1;
+    //             this.b = 2;
+    //         }
+    //         Person.prototype.c = 3;
+    //         _.forOwnRight(new Person, function (value, key) {
+    //             console.log(value + ' ' + key);
+    //         })
+    //         //2 b
+    //         //1 a
+    //     })
+    // })
+    describe('_.functions(object)', function () {
         it('', function () {
             function Person() {
-                this.a = 1;
-                this.b = 2;
+                this.a = _.constant('a');
+                this.b = _.constant('b');
             }
-            Person.prototype.c = 3;
-            _.forOwnRight(new Person, function (value, key) {
-                console.log(value + ' ' + key);
-            })
-            //2 b
-            //1 a
+            Person.prototype.c = _.constant('c');
+            let person = new Person; //[ 'a', 'b' ]
+            console.log(_.functions(person));
         })
     })
 })
