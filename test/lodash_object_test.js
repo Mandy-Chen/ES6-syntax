@@ -386,15 +386,22 @@ describe('Lodash_Object', function () {
     //         _.result(object,'a[0].b.c3',_.constant('default_value')).should.equal('default_value');
     //     })
     // })
-    describe('_.set(object, path, value)', function () {
-        it('', function () {
-            let object = { 'a': [{ 'b': { 'c': 1 } }] };
-            _.set(object,'a[0].b.c',2);
-            object.a[0].b.c.should.equal(2);
-            console.log(object); //{ a: [ { b: [Object] } ] }
-            _.set(object,['x','0','y','z'],3);
-            object.x[0].y.z.should.equal(3);
-            console.log(object); //{ a: [ { b: [Object] } ], x: [ { y: [Object] } ] }
+    // describe('_.set(object, path, value)', function () {
+    //     it('', function () {
+    //         let object = { 'a': [{ 'b': { 'c': 1 } }] };
+    //         _.set(object,'a[0].b.c',2);
+    //         object.a[0].b.c.should.equal(2);
+    //         console.log(object); //{ a: [ { b: [Object] } ] }
+    //         _.set(object,['x','0','y','z'],3);
+    //         object.x[0].y.z.should.equal(3);
+    //         console.log(object); //{ a: [ { b: [Object] } ], x: [ { y: [Object] } ] }
+    //     })
+    // })
+    describe('_.setWith(object, path, value, [customizer])',function(){
+        it('',function(){
+            let object={};
+            _.setWith(object,"['a']['b']",1,Object);
+            console.log(object); //{ a: { b: 1 } }
         })
     })
 })
