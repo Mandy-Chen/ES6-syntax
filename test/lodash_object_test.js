@@ -356,10 +356,17 @@ describe('Lodash_Object', function () {
     //         console.log(object); //{ a: 1, b: 2, c: 3 }
     //     })
     // })
-    describe('_.omitBy(object, [predicate=_.identity])', function () {
+    // describe('_.omitBy(object, [predicate=_.identity])', function () {
+    //     it('', function () {
+    //         let object = { 'a': 1, 'b': '2', 'c': 3 }
+    //         console.log(_.omitBy(object, _.isNumber)); //{ b: '2' }
+    //         console.log(object); //{ a: 1, b: '2', c: 3 }
+    //     })
+    // })
+    describe('_.pick(object, [props])', function () {
         it('', function () {
             let object = { 'a': 1, 'b': '2', 'c': 3 }
-            console.log(_.omitBy(object, _.isNumber)); //{ b: '2' }
+            console.log(_.pick(object, ['a', 'c'])); //{ a: 1, c: 3 }
             console.log(object); //{ a: 1, b: '2', c: 3 }
         })
     })
