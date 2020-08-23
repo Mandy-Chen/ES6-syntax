@@ -111,11 +111,24 @@ describe('Lodash_Object', function () {
     //     console.log(_.assignIn(object, new Student, new Teacher)); //{ a: 1, c: 3, b: 2, d: 4 }
     //     console.log(object); //{ a: 1, c: 3, b: 2, d: 4 }
     // })
-    describe('_.assignInWith(object, sources, [customizer])', function () {
-        function customizer(objValue, srcValue) {
-            return _.isUndefined(objValue) ? srcValue : objValue;
-        }
-        let defaults = _.partialRight(_.assignInWith, customizer);
-        console.log(defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 })); //{ a: 1, b: 2 }
+    // describe('_.assignInWith(object, sources, [customizer])', function () {
+    //     function customizer(objValue, srcValue) {
+    //         return _.isUndefined(objValue) ? srcValue : objValue;
+    //     }
+    //     let defaults = _.partialRight(_.assignInWith, customizer);
+    //     console.log(defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 })); //{ a: 1, b: 2 }
+    // })
+    describe('_.findKey(object, [predicate=_.identity])', function () {
+        it('',function(){
+            let users = {
+                'mandy': { 'id': 1, 'active': false },
+                'chen': { 'id': 2, 'active': true },
+                'eva': { 'id': 3, 'active': false }
+            }
+            _.findKey(users,item=>item.id>0).should.equal('mandy');
+            _.findKey(users,{'id':3,'active':false}).should.equal('eva');
+            _.findKey(users,['active',false]).should.equal('mandy');
+            _.findKey(users,'active').should.equal('chen');
+        })
     })
 })
