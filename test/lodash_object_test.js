@@ -250,11 +250,21 @@ describe('Lodash_Object', function () {
     //         _.hasIn(object,'b').should.equal(false)
     //     })
     // })
-    describe('_.invert(object)', function () {
+    // describe('_.invert(object)', function () {
+    //     it('', function () {
+    //         let object = { 'a': 1, 'b': 2, 'c': 1 };
+    //         console.log(_.invert(object)); //{ '1': 'c', '2': 'b' }
+    //         console.log(object); //{ a: 1, b: 2, c: 1 }
+    //     })
+    // })
+    describe('_.invertBy(object, [iteratee=_.identity])', function () {
         it('', function () {
-            let object = { 'a': 1, 'b': 2, 'c': 1 };
-            console.log(_.invert(object)); //{ '1': 'c', '2': 'b' }
-            console.log(object); //{ a: 1, b: 2, c: 1 }
+            let object = { 'a': 3, 'b': 4, 'c': 3 };
+            console.log(_.invertBy(object)); //{ '3': [ 'a', 'c' ], '4': [ 'b' ] }
+            console.log(object); //{ a: 3, b: 4, c: 3 }
+            console.log(_.invertBy(object,function(value){
+                return 'value '+value ;//{ 'value 3': [ 'a', 'c' ], 'value 4': [ 'b' ] }
+            }));
         })
     })
 })
