@@ -203,15 +203,26 @@ describe('Lodash_Object', function () {
     //         //1 a
     //     })
     // })
-    describe('_.functions(object)', function () {
+    // describe('_.functions(object)', function () {
+    //     it('', function () {
+    //         function Person() {
+    //             this.a = _.constant('a');
+    //             this.b = _.constant('b');
+    //         }
+    //         Person.prototype.c = _.constant('c');
+    //         let person = new Person; 
+    //         console.log(_.functions(person)); //[ 'a', 'b' ]
+    //     })
+    // })
+    describe('_.functionsIn(object)', function () {
         it('', function () {
             function Person() {
                 this.a = _.constant('a');
                 this.b = _.constant('b');
             }
             Person.prototype.c = _.constant('c');
-            let person = new Person; //[ 'a', 'b' ]
-            console.log(_.functions(person));
+            let person = new Person; 
+            console.log(_.functionsIn(person)); //[ 'a', 'b', 'c' ]
         })
     })
 })
