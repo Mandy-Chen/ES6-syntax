@@ -324,12 +324,28 @@ describe('Lodash_Object', function () {
     //         //{ teacher: '99999', student: '66666' }
     //     })
     // })
-    describe('_.merge(object, [sources])', function () {
+    // describe('_.merge(object, [sources])', function () {
+    //     it('', function () {
+    //         let object ={'a':[{'b':1,'c':2},{'d':3}]};
+    //         let other={'a':[{'b':11,'e':4},{'f':5,'g':6}]}
+    //         console.log(_.merge(object,other));
+    //         //{ a: [ { b: 11, c: 2, e: 4 }, { d: 3, f: 5, g: 6 } ] }
+    //         console.log(object); 
+    //         //{ a: [ { b: 11, c: 2, e: 4 }, { d: 3, f: 5, g: 6 } ] }
+    //         console.log(other);
+    //         //{ a: [ { b: 11, e: 4 }, { f: 5, g: 6 } ] }
+    //     })
+    // })
+    describe('_.mergeWith(object, sources, customizer)', function () {
         it('', function () {
-            let object ={'a':[{'b':1,'c':2},{'d':3}]};
-            let other={'a':[{'b':11,'e':4},{'f':5,'g':6}]}
-            console.log(_.merge(object,other));
-            //{ a: [ { b: 11, c: 2, e: 4 }, { d: 3, f: 5, g: 6 } ] }
+            function customizer(objValue, srcValue) {
+                if (_.isArray(objValue)) {
+                    return objValue.concat(srcValue);
+                }
+            }
+            let object = { 'a': [1], 'b': [2] };
+            let other = { 'a': [3], 'b': [4] };
+            console.log(_.mergeWith(object, other,customizer));  //{ a: [ 1, 3 ], b: [ 2, 4 ] }
         })
     })
 })
