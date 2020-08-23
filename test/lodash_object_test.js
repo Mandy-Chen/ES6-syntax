@@ -214,15 +214,23 @@ describe('Lodash_Object', function () {
     //         console.log(_.functions(person)); //[ 'a', 'b' ]
     //     })
     // })
-    describe('_.functionsIn(object)', function () {
+    // describe('_.functionsIn(object)', function () {
+    //     it('', function () {
+    //         function Person() {
+    //             this.a = _.constant('a');
+    //             this.b = _.constant('b');
+    //         }
+    //         Person.prototype.c = _.constant('c');
+    //         let person = new Person; 
+    //         console.log(_.functionsIn(person)); //[ 'a', 'b', 'c' ]
+    //     })
+    // })
+    describe('_.get(object, path, [defaultValue])', function () {
         it('', function () {
-            function Person() {
-                this.a = _.constant('a');
-                this.b = _.constant('b');
-            }
-            Person.prototype.c = _.constant('c');
-            let person = new Person; 
-            console.log(_.functionsIn(person)); //[ 'a', 'b', 'c' ]
+            let object = { a: [{ b: { c: 1 } }] }
+            _.get(object, 'a[0].b.c').should.equal(1);
+            _.get(object, ['a', '0', 'b', 'c']).should.equal(1); 
+            _.get(object, 'a[0].b.c.d', 'defaultValue').should.equal('defaultValue')
         })
     })
 })
