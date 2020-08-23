@@ -370,11 +370,20 @@ describe('Lodash_Object', function () {
     //         console.log(object); //{ a: 1, b: '2', c: 3 }
     //     })
     // })
-    describe('_.pickBy(object, [predicate=_.identity])', function () {
+    // describe('_.pickBy(object, [predicate=_.identity])', function () {
+    //     it('', function () {
+    //         let object = { 'a': 1, 'b': '2', 'c': 3 }
+    //         console.log(_.pickBy(object, _.isNumber)); //{ a: 1, c: 3 }
+    //         console.log(object); //{ a: 1, b: '2', c: 3 }
+    //     })
+    // })
+    describe('_.result(object, path, [defaultValue])', function () {
         it('', function () {
-            let object = { 'a': 1, 'b': '2', 'c': 3 }
-            console.log(_.pickBy(object, _.isNumber)); //{ a: 1, c: 3 }
-            console.log(object); //{ a: 1, b: '2', c: 3 }
+            let object = {'a':[{'b':{'c1':1,'c2':_.constant(2)}}]}
+            _.result(object,'a[0].b.c1').should.equal(1);
+            _.result(object,'a[0].b.c2').should.equal(2);
+            _.result(object,'a[0].b.c3','default_value').should.equal('default_value');
+            _.result(object,'a[0].b.c3',_.constant('default_value')).should.equal('default_value');
         })
     })
 })
