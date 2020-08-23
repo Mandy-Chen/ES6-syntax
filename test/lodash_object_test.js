@@ -145,19 +145,34 @@ describe('Lodash_Object', function () {
     //         _.findLastKey(users, 'active').should.equal('chen');
     //     })
     // })
-    describe('_.forIn(object, [iteratee=_.identity])', function () {
+    // describe('_.forIn(object, [iteratee=_.identity])', function () {
+    //     it('', function () {
+    //         function Person() {
+    //             this.a = 1;
+    //             this.b = 2;
+    //         }
+    //         Person.prototype.c = 3;
+    //         _.forIn(new Person, function (value, key) {
+    //             console.log(value + ' ' + key);
+    //         })
+    //         //1 a
+    //         //2 b
+    //         //3 c
+    //     })
+    // })
+    describe('_.forInRight(object, [iteratee=_.identity])', function () {
         it('', function () {
             function Person() {
                 this.a = 1;
                 this.b = 2;
             }
             Person.prototype.c = 3;
-            _.forIn(new Person, function (value, key) {
+            _.forInRight(new Person, function (value, key) {
                 console.log(value + ' ' + key);
             })
-            //1 a
-            //2 b
             //3 c
+            //2 b
+            //1 a
         })
     })
 })
