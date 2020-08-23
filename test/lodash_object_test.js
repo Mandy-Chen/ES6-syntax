@@ -363,10 +363,17 @@ describe('Lodash_Object', function () {
     //         console.log(object); //{ a: 1, b: '2', c: 3 }
     //     })
     // })
-    describe('_.pick(object, [props])', function () {
+    // describe('_.pick(object, [props])', function () {
+    //     it('', function () {
+    //         let object = { 'a': 1, 'b': '2', 'c': 3 }
+    //         console.log(_.pick(object, ['a', 'c'])); //{ a: 1, c: 3 }
+    //         console.log(object); //{ a: 1, b: '2', c: 3 }
+    //     })
+    // })
+    describe('_.pickBy(object, [predicate=_.identity])', function () {
         it('', function () {
             let object = { 'a': 1, 'b': '2', 'c': 3 }
-            console.log(_.pick(object, ['a', 'c'])); //{ a: 1, c: 3 }
+            console.log(_.pickBy(object, _.isNumber)); //{ a: 1, c: 3 }
             console.log(object); //{ a: 1, b: '2', c: 3 }
         })
     })
