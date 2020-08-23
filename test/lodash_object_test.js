@@ -1,5 +1,6 @@
 var should = require('should');
 var _ = require('lodash');
+const { keyBy } = require('lodash');
 describe('Lodash_Object', function () {
     // describe('_.assign()', function () {
     //     it('Assign the enumerable properties of the source object to the target object', function () {
@@ -284,15 +285,32 @@ describe('Lodash_Object', function () {
     //         console.log(_.keys('mandy')); //[ '0', '1', '2', '3', '4' ]
     //     })
     // })
-    describe('_.keysIn(object)', function () {
+    // describe('_.keysIn(object)', function () {
+    //     it('', function () {
+    //         function Person() {
+    //             this.a = 1;
+    //             this.b = 2;
+    //         }
+    //         Person.prototype.c = 3;
+    //         console.log(_.keysIn(new Person)); //[ 'a', 'b', 'c' ]
+    //         console.log(_.keysIn('mandy')); //[ '0', '1', '2', '3', '4' ]
+    //     })
+    // })
+    describe('_.mapKeys(object, [iteratee=_.identity])', function () {
         it('', function () {
-            function Person() {
-                this.a = 1;
-                this.b = 2;
-            }
-            Person.prototype.c = 3;
-            console.log(_.keysIn(new Person)); //[ 'a', 'b', 'c' ]
-            console.log(_.keysIn('mandy')); //[ '0', '1', '2', '3', '4' ]
+            console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
+                return key;
+            })); 
+            //{ a: 3, b: 4 }
+            console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
+                return value;
+            }));
+            //{ '3': 3, '4': 4 }
+            console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
+                return key + value;
+            }));
+            //{ a3: 3, b4: 4 }
         })
+
     })
 })
