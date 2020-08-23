@@ -336,16 +336,24 @@ describe('Lodash_Object', function () {
     //         //{ a: [ { b: 11, e: 4 }, { f: 5, g: 6 } ] }
     //     })
     // })
-    describe('_.mergeWith(object, sources, customizer)', function () {
+    // describe('_.mergeWith(object, sources, customizer)', function () {
+    //     it('', function () {
+    //         function customizer(objValue, srcValue) {
+    //             if (_.isArray(objValue)) {
+    //                 return objValue.concat(srcValue);
+    //             }
+    //         }
+    //         let object = { 'a': [1], 'b': [2] };
+    //         let other = { 'a': [3], 'b': [4] };
+    //         console.log(_.mergeWith(object, other,customizer));  //{ a: [ 1, 3 ], b: [ 2, 4 ] }
+    //         console.log(object); //{ a: [ 1, 3 ], b: [ 2, 4 ] }
+    //     })
+    // })
+    describe('_.omit(object, [props])', function () {
         it('', function () {
-            function customizer(objValue, srcValue) {
-                if (_.isArray(objValue)) {
-                    return objValue.concat(srcValue);
-                }
-            }
-            let object = { 'a': [1], 'b': [2] };
-            let other = { 'a': [3], 'b': [4] };
-            console.log(_.mergeWith(object, other,customizer));  //{ a: [ 1, 3 ], b: [ 2, 4 ] }
+            let object = { 'a': 1, 'b': 2, 'c': 3 }
+            console.log(_.omit(object,['a','c'])); //{ b: 2 }
+            console.log(object); //{ a: 1, b: 2, c: 3 }
         })
     })
 })
