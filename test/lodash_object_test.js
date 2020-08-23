@@ -257,14 +257,20 @@ describe('Lodash_Object', function () {
     //         console.log(object); //{ a: 1, b: 2, c: 1 }
     //     })
     // })
-    describe('_.invertBy(object, [iteratee=_.identity])', function () {
+    // describe('_.invertBy(object, [iteratee=_.identity])', function () {
+    //     it('', function () {
+    //         let object = { 'a': 3, 'b': 4, 'c': 3 };
+    //         console.log(_.invertBy(object)); //{ '3': [ 'a', 'c' ], '4': [ 'b' ] }
+    //         console.log(object); //{ a: 3, b: 4, c: 3 }
+    //         console.log(_.invertBy(object,function(value){
+    //             return 'value '+value ;//{ 'value 3': [ 'a', 'c' ], 'value 4': [ 'b' ] }
+    //         }));
+    //     })
+    // })
+    describe('_.invoke(object, path, [args])', function () {
         it('', function () {
-            let object = { 'a': 3, 'b': 4, 'c': 3 };
-            console.log(_.invertBy(object)); //{ '3': [ 'a', 'c' ], '4': [ 'b' ] }
-            console.log(object); //{ a: 3, b: 4, c: 3 }
-            console.log(_.invertBy(object,function(value){
-                return 'value '+value ;//{ 'value 3': [ 'a', 'c' ], 'value 4': [ 'b' ] }
-            }));
+            let object = { 'a': [{ 'b': { 'c': [1, 2, 3, 4, 5] } }] }
+            console.log(_.invoke(object,'a[0].b.c.slice',1,3)); //[ 2, 3 ]
         })
     })
 })
