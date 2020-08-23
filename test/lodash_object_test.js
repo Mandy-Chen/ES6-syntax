@@ -118,17 +118,31 @@ describe('Lodash_Object', function () {
     //     let defaults = _.partialRight(_.assignInWith, customizer);
     //     console.log(defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 })); //{ a: 1, b: 2 }
     // })
-    describe('_.findKey(object, [predicate=_.identity])', function () {
-        it('',function(){
+    // describe('_.findKey(object, [predicate=_.identity])', function () {
+    //     it('',function(){
+    //         let users = {
+    //             'mandy': { 'id': 1, 'active': false },
+    //             'chen': { 'id': 2, 'active': true },
+    //             'eva': { 'id': 3, 'active': false }
+    //         }
+    //         _.findKey(users,item=>item.id>0).should.equal('mandy');
+    //         _.findKey(users,{'id':3,'active':false}).should.equal('eva');
+    //         _.findKey(users,['active',false]).should.equal('mandy');
+    //         _.findKey(users,'active').should.equal('chen');
+    //     })
+    // })
+    describe('_.findLastKey(object, [predicate=_.identity])', function () {
+        it('', function () {
             let users = {
                 'mandy': { 'id': 1, 'active': false },
                 'chen': { 'id': 2, 'active': true },
-                'eva': { 'id': 3, 'active': false }
+                'eva': { 'id': 3, 'active': false },
+                'viki':{'id': 3, 'active': false }
             }
-            _.findKey(users,item=>item.id>0).should.equal('mandy');
-            _.findKey(users,{'id':3,'active':false}).should.equal('eva');
-            _.findKey(users,['active',false]).should.equal('mandy');
-            _.findKey(users,'active').should.equal('chen');
+            _.findLastKey(users, item => item.id > 0).should.equal('viki');
+            _.findLastKey(users, { 'id': 3, 'active': false }).should.equal('viki');
+            _.findLastKey(users, ['active', false]).should.equal('viki');
+            _.findLastKey(users, 'active').should.equal('chen');
         })
     })
 })
