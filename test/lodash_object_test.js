@@ -296,21 +296,32 @@ describe('Lodash_Object', function () {
     //         console.log(_.keysIn('mandy')); //[ '0', '1', '2', '3', '4' ]
     //     })
     // })
-    describe('_.mapKeys(object, [iteratee=_.identity])', function () {
+    // describe('_.mapKeys(object, [iteratee=_.identity])', function () {
+    //     it('', function () {
+    //         console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
+    //             return key;
+    //         })); 
+    //         //{ a: 3, b: 4 }
+    //         console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
+    //             return value;
+    //         }));
+    //         //{ '3': 3, '4': 4 }
+    //         console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
+    //             return key + value;
+    //         }));
+    //         //{ a3: 3, b4: 4 }
+    //     })
+    // })
+    describe('_.mapValues(object, [iteratee=_.identity])', function () {
         it('', function () {
-            console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
-                return key;
-            })); 
-            //{ a: 3, b: 4 }
-            console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
-                return value;
-            }));
-            //{ '3': 3, '4': 4 }
-            console.log(_.mapKeys({ 'a': 3, 'b': 4 }, function (value, key) {
-                return key + value;
-            }));
-            //{ a3: 3, b4: 4 }
+            let object = {
+                'teacher': { 'name': 'zhang', 'salary': '99999' },
+                'student': { 'name': 'chen', 'salary': '66666' }
+            }
+            console.log(_.mapValues(object,function(o){return o.salary;}));
+            //{ teacher: '99999', student: '66666' }
+            console.log(_.mapValues(object,'salary'));
+            //{ teacher: '99999', student: '66666' }
         })
-
     })
 })
