@@ -51,19 +51,26 @@ describe('Lodash_Object', function () {
     //         console.log(_.at(object, ['a[0].b.c.d', 'a[1]'])); //[ 1, { e: 2 } ]
     //     })
     // })
-    describe('_.create(prototype, [properties])', function () {
+    // describe('_.create(prototype, [properties])', function () {
+    //     it('', function () {
+    //         function Person() {
+    //             this.name = "";
+    //         }
+    //         function Student() {
+    //             Person.call(this);
+    //         }
+    //         Student.prototype = _.create(Person.prototype, { 'constructor': Student });
+    //         let student = new Student;
+    //         (student instanceof Person).should.equal(true);
+    //         (student instanceof Student).should.equal(true);
+    //         console.log(student); //Student { name: '' }
+    //     })
+    // })
+    describe('_.defaults(object, [sources])', function () {
         it('', function () {
-            function Person() {
-                this.name = "";
-            }
-            function Student() {
-                Person.call(this);
-            }
-            Student.prototype = _.create(Person.prototype, { 'constructor': Student });
-            let student = new Student;
-            (student instanceof Person).should.equal(true);
-            (student instanceof Student).should.equal(true);
-            console.log(student); //Student { name: '' }
+            let object = { a: 1, b: 2, a: 3, b: 4 };
+            _.defaults(object);
+            console.log(object); //{ a: 3, b: 4 }
         })
     })
 })
