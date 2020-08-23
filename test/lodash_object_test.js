@@ -66,11 +66,16 @@ describe('Lodash_Object', function () {
     //         console.log(student); //Student { name: '' }
     //     })
     // })
-    describe('_.defaults(object, [sources])', function () {
-        it('', function () {
-            let object = { a: 1, b: 2, a: 3, b: 4 };
-            _.defaults(object);
-            console.log(object); //{ a: 3, b: 4 }
-        })
+    // describe('_.defaults(object, [sources])', function () {
+    //     it('', function () {
+    //         let object = { a: 1, b: 2, a: 3, b: 4 };
+    //         _.defaults(object);
+    //         console.log(object); //{ a: 3, b: 4 }
+    //     })
+    // })
+    describe('_.defaultsDeep(object, [sources])', function () {
+        let object = { a: { b: 1 }, a: { b: { c: 2 } } };
+        _.defaultsDeep(object);
+        console.log(object); //{ a: { b: { c: 2 } } }
     })
 })
