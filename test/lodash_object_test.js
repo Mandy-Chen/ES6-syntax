@@ -225,12 +225,20 @@ describe('Lodash_Object', function () {
     //         console.log(_.functionsIn(person)); //[ 'a', 'b', 'c' ]
     //     })
     // })
-    describe('_.get(object, path, [defaultValue])', function () {
+    // describe('_.get(object, path, [defaultValue])', function () {
+    //     it('', function () {
+    //         let object = { a: [{ b: { c: 1 } }] }
+    //         _.get(object, 'a[0].b.c').should.equal(1);
+    //         _.get(object, ['a', '0', 'b', 'c']).should.equal(1); 
+    //         _.get(object, 'a[0].b.c.d', 'defaultValue').should.equal('defaultValue')
+    //     })
+    // })
+    describe('_.has(object, path)', function () {
         it('', function () {
             let object = { a: [{ b: { c: 1 } }] }
-            _.get(object, 'a[0].b.c').should.equal(1);
-            _.get(object, ['a', '0', 'b', 'c']).should.equal(1); 
-            _.get(object, 'a[0].b.c.d', 'defaultValue').should.equal('defaultValue')
+            _.has(object, 'a.[0]b.c').should.equal(true);
+            _.has(object, ['a', '0', 'b']).should.equal(true);
+            _.has(object, 'a[0].b.c.d').should.equal(false)
         })
     })
 })
