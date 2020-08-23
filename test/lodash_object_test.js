@@ -241,13 +241,20 @@ describe('Lodash_Object', function () {
     //         _.has(object, 'a[0].b.c.d').should.equal(false)
     //     })
     // })
-    describe('_.hasIn(object, path)', function () {
+    // describe('_.hasIn(object, path)', function () {
+    //     it('', function () {
+    //         let object = _.create({ 'a': _.create({ b: 1 }) });
+    //         _.hasIn(object,'a').should.equal(true);
+    //         _.hasIn(object,'a.b').should.equal(true);
+    //         _.hasIn(object,['a','b']).should.equal(true);
+    //         _.hasIn(object,'b').should.equal(false)
+    //     })
+    // })
+    describe('_.invert(object)', function () {
         it('', function () {
-            let object = _.create({ 'a': _.create({ b: 1 }) });
-            _.hasIn(object,'a').should.equal(true);
-            _.hasIn(object,'a.b').should.equal(true);
-            _.hasIn(object,['a','b']).should.equal(true);
-            _.hasIn(object,'b').should.equal(false)
+            let object = { 'a': 1, 'b': 2, 'c': 1 };
+            console.log(_.invert(object)); //{ '1': 'c', '2': 'b' }
+            console.log(object); //{ a: 1, b: 2, c: 1 }
         })
     })
 })
