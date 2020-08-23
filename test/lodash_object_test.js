@@ -78,14 +78,24 @@ describe('Lodash_Object', function () {
     //     _.defaultsDeep(object);
     //     console.log(object); //{ a: { b: { c: 2 } } }
     // })
-    describe('_.toPairs(object)', function () {
-        function Student() {
-            this.name = "mandy";
-            this.age = 18;
+    // describe('_.toPairs(object)', function () {
+    //     function Student() {
+    //         this.name = "mandy";
+    //         this.age = 18;
+    //     }
+    //     Student.prototype.id = 1;
+    //     let student = new Student;
+    //     console.log(_.toPairs(student)); //[ [ 'name', 'mandy' ], [ 'age', 18 ] ]
+    //     console.log(student);// Student { name: 'mandy', age: 18 }
+    // })
+    describe('_.toPairsIn(object)',function(){
+        function Student(){
+            this.name="mandy";
+            this.age=18;
         }
-        Student.prototype.id = 1;
-        let student = new Student;
-        console.log(_.toPairs(student)); //[ [ 'name', 'mandy' ], [ 'age', 18 ] ]
-        console.log(student);// Student { name: 'mandy', age: 18 }
+        Student.prototype.id=1;
+        let student=new Student;
+        console.log(_.toPairsIn(student)); //[ [ 'name', 'mandy' ], [ 'age', 18 ], [ 'id', 1 ] ]
+        console.log(student); //Student { name: 'mandy', age: 18 }
     })
 })
