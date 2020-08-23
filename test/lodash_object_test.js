@@ -438,11 +438,22 @@ describe('Lodash_Object', function () {
     //         object.x[0].y.z.should.equal(99);
     //     })
     // })
-    describe('_.updateWith(object, path, updater, [customizer])', function () {
+    // describe('_.updateWith(object, path, updater, [customizer])', function () {
+    //     it('', function () {
+    //         let object = {};
+    //         _.updateWith(object, "['a']['b']",_.constant(4), Object);
+    //         console.log(object); //{ a: { b: 4 } }
+    //     })
+    // })
+    describe('_.values(object)', function () {
         it('', function () {
-            let object = {};
-            _.updateWith(object, "['a']['b']",_.constant(4), Object);
-            console.log(object); //{ a: { b: 4 } }
+            function Person() {
+                this.a = 'a';
+                this.b = 'b';
+            }
+            Person.prototype.c = 'c';
+            console.log(_.values(new Person)); //[ 'a', 'b' ]
+            console.log(_.values("mandy")); //[ 'm', 'a', 'n', 'd', 'y' ]
         })
     })
 })
