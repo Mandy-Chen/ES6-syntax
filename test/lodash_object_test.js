@@ -273,15 +273,26 @@ describe('Lodash_Object', function () {
     //         console.log(_.invoke(object,'a[0].b.c.slice',1,3)); //[ 2, 3 ]
     //     })
     // })
-    describe('_.keys(object)', function () {
+    // describe('_.keys(object)', function () {
+    //     it('', function () {
+    //         function Person() {
+    //             this.a = 1;
+    //             this.b = 2;
+    //         }
+    //         Person.prototype.c = 3;
+    //         console.log(_.keys(new Person)); //[ 'a', 'b' ]
+    //         console.log(_.keys('mandy')); //[ '0', '1', '2', '3', '4' ]
+    //     })
+    // })
+    describe('_.keysIn(object)', function () {
         it('', function () {
             function Person() {
                 this.a = 1;
                 this.b = 2;
             }
             Person.prototype.c = 3;
-            console.log(_.keys(new Person)); //[ 'a', 'b' ]
-            console.log(_.keys('mandy')); //[ '0', '1', '2', '3', '4' ]
+            console.log(_.keysIn(new Person)); //[ 'a', 'b', 'c' ]
+            console.log(_.keysIn('mandy')); //[ '0', '1', '2', '3', '4' ]
         })
     })
 })
