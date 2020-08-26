@@ -456,14 +456,14 @@ describe('Lodash_Object', function () {
     //         console.log(_.values("mandy")); //[ 'm', 'a', 'n', 'd', 'y' ]
     //     })
     // })
-    describe('_.valuesIn(object)', function (){
-        it('', function () {
-            function Person() {
-                this.a = 'a';
-                this.b = 'b';
-            }
-            Person.prototype.c = 'c';
-            console.log(_.valuesIn(new Person)); //[ 'a', 'b', 'c' ]
-        })
-    })
+    // describe('_.valuesIn(object)', function (){
+    //     it('', function () {
+    //         function Person() {
+    //             this.a = 'a';
+    //             this.b = 'b';
+    //         }
+    //         Person.prototype.c = 'c';
+    //         console.log(_.valuesIn(new Person)); //[ 'a', 'b', 'c' ]
+    //     })
+    // })
 })
